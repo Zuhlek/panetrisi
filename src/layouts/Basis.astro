@@ -1,18 +1,19 @@
 ---
 import '../styles/site.css';
-import Kopf from '../components/Kopf.astro';
-import Fuss from '../components/Fuss.astro';
+import Dateibaum from '../components/Dateibaum.astro';
+import { dateibaum } from '../lib/baum';
 import { pfad } from '../lib/pfad';
 
 interface Props {
   titel: string;
   beschreibung?: string;
+  /** Sammlungs-ID der aktuellen Seite, für die Hervorhebung im Baum. */
   aktiv?: string;
-  /** Seiten, die nicht in Suchmaschinen landen sollen (Vorlagen, Referenz). */
   nichtIndexieren?: boolean;
 }
 
 const { titel, beschreibung, aktiv, nichtIndexieren = false } = Astro.props;
+const baum = await dateibaum();
 ---
 
 <!doctype html>
@@ -29,12 +30,19 @@ const { titel, beschreibung, aktiv, nichtIndexieren = false } = Astro.props;
 <body>
   <a class="zum-inhalt" href="#inhalt">Zum Inhalt springen</a>
 
-  <Kopf aktiv={aktiv} />
+  <div class="rahmen">
+    <aside class="leiste">
+      <a class="wortmarke" href={pfad()}>pane<em>trisi</em></a>
+      <nav class="baum" aria-label="Alle Seiten">
+        <Dateibaum knoten={baum} aktiv={aktiv} />
+      </nav>
+    </aside>
 
-  <main id="inhalt">
-    <slot />
-  </main>
-
-  <Fuss />
+    <main id="inhalt">
+      <article class="fliesstext">
+        <slot />
+      </article>
+    </main>
+  </div>
 </body>
 </html>

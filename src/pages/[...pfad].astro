@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import Basis from '../layouts/Basis.astro';
+
+/**
+ * Eine einzige Route für alle Seiten. Der Dateipfad unter src/inhalt/ wird zur
+ * Adresse; src/inhalt/index.md landet auf der Startseite.
+ */
+export async function getStaticPaths() {
+  const seiten = await getCollection('seiten');
+  return seiten.map((eintrag) => ({
+    params: { pfad: eintrag.id === 'index' ? undefined : eintrag.id },
+    props: { eintrag },
+  }));
+}
+
+const { eintrag } = Astro.props;
+const { Content, headings } = await render(eintrag);
+
+// Titel: Frontmatter, sonst die erste Überschrift, sonst der Dateiname
+const ersteUeberschrift = headings.find((h) => h.depth === 1)?.text;
+const dateiname = eintrag.id.split('/').pop() ?? eintrag.id;
+const titel = eintrag.data.titel ?? ersteUeberschrift ?? dateiname;
+---
+
+<Basis titel={titel} beschreibung={eintrag.data.beschreibung} aktiv={eintrag.id}>
+  <Content />
+</Basis>

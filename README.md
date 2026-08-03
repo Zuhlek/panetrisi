@@ -1,79 +1,70 @@
 # panetrisi
 
-Statische Seite mit Backrezepten. Inhalte werden in Markdown geschrieben, gebaut
-wird mit [Astro](https://astro.build).
+Betrachter für Backrezepte: links ein Dateibaum, rechts die gerenderte
+Markdown-Datei. Geschrieben wird in VS Code, gebaut mit
+[Astro](https://astro.build).
 
 Live: <https://zuhlek.github.io/panetrisi/>
 
-## Neues Rezept anlegen
+## Neue Seite anlegen
 
-1. `vorlagen/rezept.md` nach `src/inhalt/rezepte/` kopieren und umbenennen.
-   Der Dateiname wird zur Adresse: `roggenbrot.md` → `/rezepte/roggenbrot`.
-2. Frontmatter ausfüllen, Text schreiben.
-3. Bilder nach `src/inhalt/bilder/` legen — unverändert, um die Grösse kümmert
-   sich der Build.
+Eine `.md`-Datei unter `src/inhalt/` anlegen. Mehr nicht — der Ordnerbaum dort
+ist zugleich die Navigation und die Adressstruktur:
 
-Mehr braucht es nicht. Die Kachel auf der Startseite, die Navigation und die
-Vor-/Zurück-Links entstehen automatisch aus den Dateien; es gibt keine Liste,
+```
+src/inhalt/index.md             →  /
+src/inhalt/sauerteig.md         →  /sauerteig/
+src/inhalt/rezepte/baguette.md  →  /rezepte/baguette/
+src/inhalt/bilder/              Bilder, keine Seiten
+```
+
+Ein neuer Ordner erscheint automatisch als Gruppe im Baum. Es gibt keine Liste,
 die nachgeführt werden müsste.
 
-Eine Wissensseite entsteht genauso aus `vorlagen/wissen.md` in
-`src/inhalt/wissen/`.
+**Reines Markdown, keine Sondersyntax.** Die Dateien lesen sich in VS Code, auf
+GitHub und in jedem anderen Betrachter genauso wie auf der Website. Details auf
+[/schreiben](https://zuhlek.github.io/panetrisi/schreiben/), Quelle:
+`src/inhalt/schreiben.md`.
 
-**Die vollständige Referenz mit Beispielen steht auf der Seite selbst:**
-[/schreiben](https://zuhlek.github.io/panetrisi/schreiben) —
-Quelle: `src/pages/schreiben.mdx`.
+Freiwilliger Kopf für Titel und Sortierung:
+
+```yaml
+---
+titel: Baguette
+reihenfolge: 10
+beschreibung: Ein Satz für Suchmaschinen.
+---
+```
+
+Ohne Kopf funktioniert die Datei auch; der Titel kommt dann aus dem Dateinamen.
 
 ## Aufbau
 
 ```
-src/inhalt/wissen/     Grundlagenseiten (Markdown)
-src/inhalt/rezepte/    Rezepte (Markdown)
-src/inhalt/bilder/     Fotos und Grafiken im Original
-src/content.config.ts  Schema des Frontmatters — Tippfehler brechen den Build
-src/components/        Kennzahlen, Zutaten, die zwei Diagramme, Karte, Navigation
-src/layouts/           Seitengerüst, Wissens- und Rezeptlayout
-src/pages/             Startseite, Übersichten, Referenz, 404
-src/plugins/           Drei kleine Markdown-Erweiterungen (siehe unten)
-src/styles/site.css    Das gesamte Layout. Gestaltungsänderungen passieren hier.
-vorlagen/              Kopiervorlagen
-public/                Wird unverändert ausgeliefert (Favicon, Platzhalterbild)
+src/inhalt/            Alle Seiten als Markdown
+src/pages/[...pfad]    Eine Route für alles
+src/layouts/Basis      Seitengerüst: Leiste links, Text rechts
+src/components/        Dateibaum
+src/lib/               Baum bauen, Basispfad setzen
+src/plugins/           Zwei kleine Aufräumer (siehe unten)
+src/styles/site.css    Das ganze Aussehen
 ```
 
-## Markdown-Erweiterungen
+## Die zwei Plugins
 
-Drei kleine Plugins in `src/plugins/` schliessen die Lücken zwischen Markdown
-und dem Gestaltungsraster:
+Beide ändern nichts an der Markdown-Syntax; sie räumen nur das fertige HTML auf.
 
-- **`remark-bausteine.mjs`** — übersetzt `:::info`, `:::tipp`, `:::achtung`,
-  `:::zutaten`, `:::schritte` und `:::checkliste` in die Bausteine aus
-  `site.css`.
 - **`rehype-huellen.mjs`** — macht aus einem allein stehenden Bild eine
-  `<figure>` (Bildtitel wird zur Legende) und stellt Tabellen in einen
-  seitlich rollbaren Rahmen.
+  `<figure>` (der Bildtitel wird zur Legende) und stellt Tabellen in einen
+  seitlich rollbaren Rahmen, damit sie auf dem Handy nicht die Seite sprengen.
 - **`rehype-basispfad.mjs`** — setzt `/panetrisi` vor interne Links. Im Markdown
-  schreibt man `/wissen/grundlagen#fenstertest`, das Präfix steht nur in
+  schreibt man `/grundlagen#fenstertest`, das Präfix steht nur in
   `astro.config.mjs`.
 
-Begriffslisten (`Begriff` / `:   Erklärung`) kommen von
-`remark-definition-list`.
+## Bilder
 
-## Diagramme
-
-Bäckerprozente und Zeitplan sind reines CSS, ohne Diagramm-Bibliothek. Beide
-werden im Frontmatter beschrieben, nicht im Text. Die Farbstufen des Zeitplans
-ergeben sich aus der Reihenfolge der Phasen — früh hell, spät dunkel.
-
-## Farben
-
-Alle Farben stehen als Custom Properties zuoberst in `src/styles/site.css`,
-jeweils für hell und dunkel. Die Seite folgt der Systemeinstellung; ein
-`data-theme="light"` oder `data-theme="dark"` am `<html>` würde sie überstimmen,
-falls später ein Umschalter dazukommt.
-
-Die Diagrammfarben sind gegen die Flächenfarben geprüft (Helligkeitsband,
-Chroma-Untergrenze, Kontrast, monotone Ordinalrampe). Wer sie ändert, sollte das
-nachrechnen statt nach Augenmass gehen.
+Originale nach `src/inhalt/bilder/` legen, im Markdown mit relativem Pfad
+einbinden. Beim Bauen werden sie auf WebP umgerechnet und verkleinert.
 
 ## Lokal arbeiten
 
@@ -82,26 +73,20 @@ npm install
 npm run dev        # http://localhost:4321/panetrisi
 ```
 
-Der Entwicklungsserver lädt bei jeder Änderung neu. `npm run build` baut nach
-`dist/`, `npm run preview` zeigt das Ergebnis so, wie es später live steht.
+`npm run build` baut nach `dist/`, `npm run preview` zeigt das Ergebnis so, wie
+es später live steht.
 
 ## Veröffentlichen
 
-Jeder Push auf `main` (oder `master`) startet den Workflow unter
-`.github/workflows/deploy.yml`: `npm ci`, `npm run build`, `dist/` nach GitHub
-Pages. Der Stand ist nach ein bis zwei Minuten live. Der Deploy lässt sich im
-Actions-Tab auch von Hand starten.
-
-Bricht der Build wegen eines Fehlers im Frontmatter ab, wird nichts
-veröffentlicht — die alte Fassung bleibt online stehen.
+Jeder Push auf `main` startet `.github/workflows/deploy.yml`: `npm ci`,
+`npm run build`, `dist/` nach GitHub Pages. Nach ein bis zwei Minuten ist der
+Stand live. Bricht der Build ab, bleibt die alte Fassung online.
 
 ### Eigene Domain
 
-Bei einer eigenen Domain ändert sich der Basispfad von `/panetrisi/` auf `/`.
-Dafür in `astro.config.mjs` `BASIS` auf `'/'` setzen und `site` anpassen. Sonst
+`BASIS` in `astro.config.mjs` auf `'/'` setzen und `site` anpassen. Sonst
 nichts — alle Links laufen über diese eine Stelle.
 
 ## Inhalt
 
-Die Texte unter `src/inhalt/` stammen aus dem eigenen Notion-Dokument
-«Sauerteig Einführung».
+Die Texte stammen aus dem eigenen Notion-Dokument «Sauerteig Einführung».

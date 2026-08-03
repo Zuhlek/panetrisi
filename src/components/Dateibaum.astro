@@ -1,0 +1,27 @@
+---
+import type { Knoten } from '../lib/baum';
+
+interface Props {
+  knoten: Knoten[];
+  /** Sammlungs-ID der aktuellen Seite. */
+  aktiv?: string;
+}
+
+const { knoten, aktiv } = Astro.props;
+---
+
+<ul>
+  {knoten.map((k) => (
+    <li>
+      {k.ziel ? (
+        <a href={k.ziel} aria-current={k.id === aktiv ? 'page' : undefined}>{k.titel}</a>
+      ) : (
+        // Ordner stehen offen; zuklappen geht von Hand, ganz ohne JavaScript
+        <details open>
+          <summary>{k.titel}</summary>
+          <Astro.self knoten={k.kinder} aktiv={aktiv} />
+        </details>
+      )}
+    </li>
+  ))}
+</ul>
