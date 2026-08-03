@@ -1,0 +1,43 @@
+---
+import type { MarkdownHeading } from 'astro';
+import Basis from './Basis.astro';
+import Verzeichnis from '../components/Verzeichnis.astro';
+
+/**
+ * Layout für einzelne Seiten unter src/pages, die direkt als .md oder .mdx
+ * geschrieben werden. Inhaltsseiten aus src/inhalt nutzen Wissen.astro
+ * beziehungsweise Rezept.astro.
+ */
+interface Props {
+  frontmatter: {
+    titel: string;
+    kicker?: string;
+    lead?: string;
+    verzeichnis?: boolean;
+    nichtIndexieren?: boolean;
+  };
+  headings: MarkdownHeading[];
+}
+
+const { frontmatter, headings } = Astro.props;
+---
+
+<Basis
+  titel={frontmatter.titel}
+  beschreibung={frontmatter.lead}
+  nichtIndexieren={frontmatter.nichtIndexieren}
+>
+  <div class="spalte">
+    <div class="seitenkopf">
+      {frontmatter.kicker && <span class="kicker">{frontmatter.kicker}</span>}
+      <h1>{frontmatter.titel}</h1>
+      {frontmatter.lead && <p class="lead">{frontmatter.lead}</p>}
+    </div>
+
+    {frontmatter.verzeichnis && <Verzeichnis ueberschriften={headings} />}
+
+    <div class="fliesstext">
+      <slot />
+    </div>
+  </div>
+</Basis>

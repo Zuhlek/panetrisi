@@ -1,6 +1,6 @@
 name: Seite veröffentlichen
 
-# Bei jedem Push auf den Hauptbranch wird die Seite neu ausgeliefert.
+# Bei jedem Push auf den Hauptbranch wird die Seite gebaut und ausgeliefert.
 # "workflow_dispatch" erlaubt zusätzlich einen Start von Hand über den
 # Actions-Tab auf GitHub.
 on:
@@ -31,15 +31,25 @@ jobs:
       - name: Repository auschecken
         uses: actions/checkout@v4
 
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: Seite bauen
+        run: npm run build
+
       - name: Pages vorbereiten
         uses: actions/configure-pages@v5
 
-      # Kein Build-Schritt: Die Seite ist reines HTML und wird so hochgeladen,
-      # wie sie im Repository liegt. .git und .github schliesst die Action selbst aus.
-      - name: Dateien hochladen
+      - name: Ergebnis hochladen
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./dist
 
       - name: Veröffentlichen
         id: deployment

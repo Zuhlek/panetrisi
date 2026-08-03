@@ -1,0 +1,40 @@
+---
+import '../styles/site.css';
+import Kopf from '../components/Kopf.astro';
+import Fuss from '../components/Fuss.astro';
+import { pfad } from '../lib/pfad';
+
+interface Props {
+  titel: string;
+  beschreibung?: string;
+  aktiv?: string;
+  /** Seiten, die nicht in Suchmaschinen landen sollen (Vorlagen, Referenz). */
+  nichtIndexieren?: boolean;
+}
+
+const { titel, beschreibung, aktiv, nichtIndexieren = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{titel} — panetrisi</title>
+  {beschreibung && <meta name="description" content={beschreibung} />}
+  {nichtIndexieren && <meta name="robots" content="noindex" />}
+  <link rel="icon" href={pfad('favicon.svg')} type="image/svg+xml" />
+</head>
+
+<body>
+  <a class="zum-inhalt" href="#inhalt">Zum Inhalt springen</a>
+
+  <Kopf aktiv={aktiv} />
+
+  <main id="inhalt">
+    <slot />
+  </main>
+
+  <Fuss />
+</body>
+</html>

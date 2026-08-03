@@ -1,0 +1,29 @@
+---
+import { render } from 'astro:content';
+import Wissen from '../../layouts/Wissen.astro';
+import { wissenseiten, kapitelkette, nachbarn } from '../../lib/kapitel';
+
+export async function getStaticPaths() {
+  const seiten = await wissenseiten();
+  return seiten.map((eintrag) => ({
+    params: { id: eintrag.id },
+    props: { eintrag },
+  }));
+}
+
+const { eintrag } = Astro.props;
+const { Content, headings } = await render(eintrag);
+
+const kette = await kapitelkette();
+const { vorher, nachher } = nachbarn(kette, 'wissen', eintrag.id);
+---
+
+<Wissen
+  daten={eintrag.data}
+  aktiv={`wissen/${eintrag.id}`}
+  ueberschriften={headings}
+  vorher={vorher}
+  nachher={nachher}
+>
+  <Content />
+</Wissen>

@@ -1,0 +1,18 @@
+---
+interface Props {
+  eintraege: { label: string; wert: string; einheit?: string }[];
+}
+
+const { eintraege } = Astro.props;
+---
+
+{eintraege.length > 0 && (
+  <ul class="kennzahlen">
+    {eintraege.map((e) => (
+      <li>
+        <span class="kennzahl-label">{e.label}</span>
+        <span class="kennzahl-wert">{e.wert}{e.einheit && <small>{e.einheit}</small>}</span>
+      </li>
+    ))}
+  </ul>
+)}

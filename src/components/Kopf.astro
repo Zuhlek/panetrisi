@@ -1,0 +1,35 @@
+---
+import { pfad } from '../lib/pfad';
+import { wissenseiten } from '../lib/kapitel';
+
+interface Props {
+  /** Welcher Navigationspunkt hervorgehoben wird, z. B. "start" oder "wissen/sauerteig". */
+  aktiv?: string;
+}
+
+const { aktiv } = Astro.props;
+
+// Die Wissensseiten stehen automatisch in der Navigation, in ihrer Reihenfolge.
+const wissen = await wissenseiten();
+
+const eintraege = [
+  { schluessel: 'start', titel: 'Start', ziel: pfad() },
+  ...wissen.map((e) => ({
+    schluessel: `wissen/${e.id}`,
+    titel: e.data.titel,
+    ziel: pfad(`wissen/${e.id}`),
+  })),
+  { schluessel: 'rezepte', titel: 'Rezepte', ziel: pfad('rezepte') },
+];
+---
+
+<header class="kopf">
+  <div class="spalte-breit kopf-innen">
+    <a class="wortmarke" href={pfad()}>pane<em>trisi</em></a>
+    <nav class="kopf-nav" aria-label="Hauptnavigation">
+      {eintraege.map((e) => (
+        <a href={e.ziel} aria-current={aktiv === e.schluessel ? 'page' : undefined}>{e.titel}</a>
+      ))}
+    </nav>
+  </div>
+</header>

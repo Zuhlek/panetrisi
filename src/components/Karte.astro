@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import { pfad } from '../lib/pfad';
+
+interface Props {
+  ziel: string;
+  titel: string;
+  text?: string;
+  meta?: string[];
+  bild?: ImageMetadata;
+  bildAlt?: string;
+}
+
+const { ziel, titel, text, meta = [], bild, bildAlt = '' } = Astro.props;
+---
+
+<li class="karte">
+  {bild
+    ? <Image src={bild} alt={bildAlt} width={800} loading="lazy" />
+    : <img src={pfad('platzhalter.svg')} alt="" width="800" height="600" />}
+
+  <div class="karte-text">
+    <h2><a href={ziel}>{titel}</a></h2>
+    {text && <p>{text}</p>}
+    {meta.length > 0 && (
+      <p class="karte-meta">{meta.map((m) => <span>{m}</span>)}</p>
+    )}
+  </div>
+</li>

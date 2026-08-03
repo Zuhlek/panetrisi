@@ -19,7 +19,8 @@
     12. Visualisierungen (Bäckerprozente, Zeitplan)
     13. Navigation im Text (Inhalt, Blättern)
     14. Baukasten-Seite
-    15. Druck
+    15. Markdown-Fliesstext
+    16. Druck
    ========================================================================== */
 
 /* --- 1. Farb-Tokens ------------------------------------------------------
@@ -343,9 +344,17 @@ h4 { font-family: var(--sans); font-size: 1.02rem; }
 
 /* --- 5. Listen ---------------------------------------------------------- */
 
-.liste { padding-left: 1.25rem; }
-.liste li { margin-bottom: 0.4rem; }
-.liste li::marker { color: var(--serie); }
+.liste,
+.fliesstext ul:not([class]),
+.fliesstext ol:not([class]) { padding-left: 1.25rem; }
+
+.liste li,
+.fliesstext ul:not([class]) > li,
+.fliesstext ol:not([class]) > li { margin-bottom: 0.4rem; }
+
+.liste li::marker,
+.fliesstext ul:not([class]) > li::marker,
+.fliesstext ol:not([class]) > li::marker { color: var(--serie); }
 
 /* Zutatenliste: Bezeichnung links, Menge rechts */
 .zutaten {
@@ -409,13 +418,17 @@ h4 { font-family: var(--sans); font-size: 1.02rem; }
 .schritte > li > :last-child { margin-bottom: 0; }
 
 /* Begriffsliste */
-.begriffe { margin: 0; }
-.begriffe dt {
+.begriffe,
+.fliesstext dl { margin: 0 0 1.15em; }
+.begriffe dt,
+.fliesstext dl dt {
   font-weight: 600;
   margin-top: 1.35rem;
 }
-.begriffe dt:first-child { margin-top: 0; }
-.begriffe dd {
+.begriffe dt:first-child,
+.fliesstext dl dt:first-child { margin-top: 0; }
+.begriffe dd,
+.fliesstext dl dd {
   margin: 0.2rem 0 0;
   color: var(--ink-sekundaer);
 }
@@ -481,7 +494,8 @@ h4 { font-family: var(--sans); font-size: 1.02rem; }
 
 /* --- 7. Zitat ----------------------------------------------------------- */
 
-.zitat {
+.zitat,
+.fliesstext blockquote {
   margin: 2.5rem 0;
   padding: 0.25rem 0 0.25rem 1.5rem;
   border-left: 3px solid var(--linie-stark);
@@ -491,34 +505,41 @@ h4 { font-family: var(--sans); font-size: 1.02rem; }
   color: var(--ink-primaer);
   text-wrap: pretty;
 }
-.zitat p { margin-bottom: 0.6rem; }
-.zitat cite {
+.zitat p,
+.fliesstext blockquote p { margin-bottom: 0.6rem; }
+.zitat cite,
+.fliesstext blockquote cite {
   display: block;
   font-family: var(--sans);
   font-size: 0.9rem;
   font-style: normal;
   color: var(--ink-gedaempft);
 }
-.zitat cite::before { content: "— "; }
+.zitat cite::before,
+.fliesstext blockquote cite::before { content: "— "; }
 
 /* --- 8. Tabellen -------------------------------------------------------- */
 
 .tabelle-rollen { overflow-x: auto; margin: 2rem 0; }
 
-.tabelle {
+.tabelle,
+.fliesstext table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.95rem;
   margin: 0;
 }
 .tabelle th,
-.tabelle td {
+.tabelle td,
+.fliesstext table th,
+.fliesstext table td {
   text-align: left;
   padding: 0.7rem 1rem 0.7rem 0;
   border-bottom: 1px solid var(--linie);
   vertical-align: top;
 }
-.tabelle thead th {
+.tabelle thead th,
+.fliesstext table thead th {
   font-family: var(--sans);
   font-size: 0.8rem;
   font-weight: 700;
@@ -527,13 +548,18 @@ h4 { font-family: var(--sans); font-size: 1.02rem; }
   color: var(--ink-gedaempft);
   border-bottom: 1px solid var(--linie-stark);
 }
-.tabelle tbody th {
+.tabelle tbody th,
+.fliesstext table tbody th {
   font-weight: 600;
   color: var(--ink-primaer);
   padding-right: 1.5rem;
   white-space: nowrap;
 }
-.tabelle td { color: var(--ink-sekundaer); }
+.tabelle td,
+.fliesstext table td { color: var(--ink-sekundaer); }
+/* Erste Spalte einer Vergleichstabelle wird im Markdown fett ausgezeichnet */
+.tabelle td strong,
+.fliesstext table td strong { color: var(--ink-primaer); font-weight: 600; }
 .tabelle .zahl { font-variant-numeric: tabular-nums; text-align: right; padding-right: 0; }
 
 /* --- 9. Kennzahlen ------------------------------------------------------ */
@@ -887,7 +913,43 @@ figcaption {
 }
 .kopier-knopf:hover { color: var(--ink-primaer); border-color: var(--ink-gedaempft); }
 
-/* --- 15. Druck ----------------------------------------------------------
+/* --- 15. Markdown-Fliesstext --------------------------------------------
+   Der aus .md gerenderte Inhalt. Überschriften bringen hier den Abstand mit,
+   den auf gebauten Seiten die .abschnitt-Klasse setzt.
+   -------------------------------------------------------------------- */
+
+.fliesstext > :first-child { margin-top: 0; }
+.fliesstext > h2 { margin-top: 3.5rem; }
+.fliesstext > h3 { margin-top: 2.25rem; }
+.fliesstext > h2:first-child,
+.fliesstext > h3:first-child { margin-top: 0; }
+.fliesstext > :last-child { margin-bottom: 0; }
+
+/* Codeblöcke — Shiki färbt die Zeichen, die Fläche kommt von der Seite */
+.fliesstext .astro-code {
+  background: var(--flaeche-sanft) !important;
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem;
+  margin: 1.25rem 0 1.75rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .fliesstext .astro-code,
+  :root:where(:not([data-theme="light"])) .fliesstext .astro-code span {
+    color: var(--shiki-dark) !important;
+  }
+}
+:root[data-theme="dark"] .fliesstext .astro-code,
+:root[data-theme="dark"] .fliesstext .astro-code span {
+  color: var(--shiki-dark) !important;
+}
+
+/* --- 16. Druck ----------------------------------------------------------
    Rezepte werden ausgedruckt: Navigation und Flächen weg, Text schwarz.
    -------------------------------------------------------------------- */
 @media print {

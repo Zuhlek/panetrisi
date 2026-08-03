@@ -1,57 +1,72 @@
 # panetrisi
 
-Statische Seite mit Backrezepten. Reines HTML und ein einziges Stylesheet —
-kein Build-Schritt, keine Abhängigkeiten.
+Statische Seite mit Backrezepten. Inhalte werden in Markdown geschrieben, gebaut
+wird mit [Astro](https://astro.build).
 
 Live: <https://zuhlek.github.io/panetrisi/>
+
+## Neues Rezept anlegen
+
+1. `vorlagen/rezept.md` nach `src/inhalt/rezepte/` kopieren und umbenennen.
+   Der Dateiname wird zur Adresse: `roggenbrot.md` → `/rezepte/roggenbrot`.
+2. Frontmatter ausfüllen, Text schreiben.
+3. Bilder nach `src/inhalt/bilder/` legen — unverändert, um die Grösse kümmert
+   sich der Build.
+
+Mehr braucht es nicht. Die Kachel auf der Startseite, die Navigation und die
+Vor-/Zurück-Links entstehen automatisch aus den Dateien; es gibt keine Liste,
+die nachgeführt werden müsste.
+
+Eine Wissensseite entsteht genauso aus `vorlagen/wissen.md` in
+`src/inhalt/wissen/`.
+
+**Die vollständige Referenz mit Beispielen steht auf der Seite selbst:**
+[/schreiben](https://zuhlek.github.io/panetrisi/schreiben) —
+Quelle: `src/pages/schreiben.mdx`.
 
 ## Aufbau
 
 ```
-index.html            Startseite mit den Rezeptkarten
-sauerteig.html        Einführung Sauerteig
-grundlagen.html       Grundbegriffe und Grundrezept
-komponenten.html      Baukasten: alle Bausteine mit Code zum Kopieren
-404.html              Fehlerseite (eigenes, eingebettetes CSS)
-rezepte/
-  baguette.html       Baguetterezept
-  vorlage.html        Kopiervorlage für neue Rezepte
-assets/
-  css/site.css        Das gesamte Layout. Änderungen passieren hier.
-  js/kopieren.js      Nur für die Kopier-Knöpfe im Baukasten
-  bilder/             Fotos und Grafiken
-.github/workflows/    Deploy nach GitHub Pages
+src/inhalt/wissen/     Grundlagenseiten (Markdown)
+src/inhalt/rezepte/    Rezepte (Markdown)
+src/inhalt/bilder/     Fotos und Grafiken im Original
+src/content.config.ts  Schema des Frontmatters — Tippfehler brechen den Build
+src/components/        Kennzahlen, Zutaten, die zwei Diagramme, Karte, Navigation
+src/layouts/           Seitengerüst, Wissens- und Rezeptlayout
+src/pages/             Startseite, Übersichten, Referenz, 404
+src/plugins/           Drei kleine Markdown-Erweiterungen (siehe unten)
+src/styles/site.css    Das gesamte Layout. Gestaltungsänderungen passieren hier.
+vorlagen/              Kopiervorlagen
+public/                Wird unverändert ausgeliefert (Favicon, Platzhalterbild)
 ```
 
-## Neues Rezept anlegen
+## Markdown-Erweiterungen
 
-1. `rezepte/vorlage.html` kopieren, zum Beispiel nach `rezepte/roggenbrot.html`.
-2. Im `<head>` Titel und Beschreibung anpassen und die Zeile
-   `<meta name="robots" content="noindex">` löschen.
-3. Inhalt einsetzen. Die verfügbaren Bausteine stehen in
-   [komponenten.html](komponenten.html) — dort jeweils mit Beispiel und Code.
-4. In `index.html` eine Karte für das neue Rezept ergänzen.
-5. Bilder nach `assets/bilder/` legen und im HTML mit `width` und `height`
-   angeben, damit beim Laden nichts springt.
+Drei kleine Plugins in `src/plugins/` schliessen die Lücken zwischen Markdown
+und dem Gestaltungsraster:
 
-## Bausteine
+- **`remark-bausteine.mjs`** — übersetzt `:::info`, `:::tipp`, `:::achtung`,
+  `:::zutaten`, `:::schritte` und `:::checkliste` in die Bausteine aus
+  `site.css`.
+- **`rehype-huellen.mjs`** — macht aus einem allein stehenden Bild eine
+  `<figure>` (Bildtitel wird zur Legende) und stellt Tabellen in einen
+  seitlich rollbaren Rahmen.
+- **`rehype-basispfad.mjs`** — setzt `/panetrisi` vor interne Links. Im Markdown
+  schreibt man `/wissen/grundlagen#fenstertest`, das Präfix steht nur in
+  `astro.config.mjs`.
 
-Der Baukasten unter `komponenten.html` enthält Seitenkopf, Textabschnitte,
-Listen (Aufzählung, Checkliste, Zutaten, Arbeitsschritte, Begriffe), vier
-Panel-Varianten (Info, Tipp, Achtung, Zutaten), Zitate, Tabellen, Kennzahlen,
-Bilder, Kartenraster, zwei Diagramme (Bäckerprozente, Zeitplan) sowie
-Inhaltsverzeichnis und Vor-/Zurück-Navigation.
+Begriffslisten (`Begriff` / `:   Erklärung`) kommen von
+`remark-definition-list`.
 
-Die Diagramme sind reines CSS. Werte werden über Custom Properties gesetzt:
+## Diagramme
 
-- **Bäckerprozente** — `--bp-max` am Container (grösster Wert, in der Regel 100),
-  `--pct` an jeder Zeile.
-- **Zeitplan** — `--gesamt` am Container (Gesamtdauer in Minuten), `--dauer` und
-  `data-stufe` (1–6) an jeder Phase.
+Bäckerprozente und Zeitplan sind reines CSS, ohne Diagramm-Bibliothek. Beide
+werden im Frontmatter beschrieben, nicht im Text. Die Farbstufen des Zeitplans
+ergeben sich aus der Reihenfolge der Phasen — früh hell, spät dunkel.
 
 ## Farben
 
-Alle Farben stehen als Custom Properties zuoberst in `assets/css/site.css`,
+Alle Farben stehen als Custom Properties zuoberst in `src/styles/site.css`,
 jeweils für hell und dunkel. Die Seite folgt der Systemeinstellung; ein
 `data-theme="light"` oder `data-theme="dark"` am `<html>` würde sie überstimmen,
 falls später ein Umschalter dazukommt.
@@ -60,31 +75,33 @@ Die Diagrammfarben sind gegen die Flächenfarben geprüft (Helligkeitsband,
 Chroma-Untergrenze, Kontrast, monotone Ordinalrampe). Wer sie ändert, sollte das
 nachrechnen statt nach Augenmass gehen.
 
-## Lokal anschauen
-
-Ein Doppelklick auf `index.html` reicht. Wer einen Server möchte:
+## Lokal arbeiten
 
 ```sh
-python3 -m http.server 8000
-# http://localhost:8000
+npm install
+npm run dev        # http://localhost:4321/panetrisi
 ```
+
+Der Entwicklungsserver lädt bei jeder Änderung neu. `npm run build` baut nach
+`dist/`, `npm run preview` zeigt das Ergebnis so, wie es später live steht.
 
 ## Veröffentlichen
 
 Jeder Push auf `main` (oder `master`) startet den Workflow unter
-`.github/workflows/deploy.yml`. Der lädt das Repository unverändert hoch — es
-gibt nichts zu bauen. Der Stand ist nach ein bis zwei Minuten live.
+`.github/workflows/deploy.yml`: `npm ci`, `npm run build`, `dist/` nach GitHub
+Pages. Der Stand ist nach ein bis zwei Minuten live. Der Deploy lässt sich im
+Actions-Tab auch von Hand starten.
 
-Der Deploy lässt sich im Actions-Tab auch von Hand starten.
+Bricht der Build wegen eines Fehlers im Frontmatter ab, wird nichts
+veröffentlicht — die alte Fassung bleibt online stehen.
 
 ### Eigene Domain
 
 Bei einer eigenen Domain ändert sich der Basispfad von `/panetrisi/` auf `/`.
-Betroffen ist nur `404.html`: dort sind die Pfade absolut, weil die Seite auch
-unter Adressen wie `/panetrisi/gibt/es/nicht` ausgeliefert wird. Das Präfix
-`/panetrisi` in dieser Datei entfernen, sonst nichts.
+Dafür in `astro.config.mjs` `BASIS` auf `'/'` setzen und `site` anpassen. Sonst
+nichts — alle Links laufen über diese eine Stelle.
 
 ## Inhalt
 
-Die Texte auf `sauerteig.html`, `grundlagen.html` und `rezepte/baguette.html`
-stammen aus dem eigenen Notion-Dokument «Sauerteig Einführung».
+Die Texte unter `src/inhalt/` stammen aus dem eigenen Notion-Dokument
+«Sauerteig Einführung».

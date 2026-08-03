@@ -1,0 +1,26 @@
+---
+type Posten =
+  | { trenner: string }
+  | { name: string; menge?: string; hinweis?: string };
+
+interface Props {
+  gruppen: { posten: Posten[] }[];
+}
+
+const { gruppen } = Astro.props;
+
+const istTrenner = (p: Posten): p is { trenner: string } => 'trenner' in p;
+---
+
+{gruppen.map((gruppe) => (
+  <ul class="zutaten">
+    {gruppe.posten.map((p) => istTrenner(p) ? (
+      <li class="zutaten-oder">{p.trenner}</li>
+    ) : (
+      <li>
+        <span>{p.name}{p.hinweis && <> <span class="gedaempft klein">{p.hinweis}</span></>}</span>
+        {p.menge && <span class="menge">{p.menge}</span>}
+      </li>
+    ))}
+  </ul>
+))}

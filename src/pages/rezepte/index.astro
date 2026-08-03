@@ -1,0 +1,36 @@
+---
+import Basis from '../../layouts/Basis.astro';
+import Karte from '../../components/Karte.astro';
+import { pfad } from '../../lib/pfad';
+import { rezeptseiten } from '../../lib/kapitel';
+
+const rezepte = await rezeptseiten();
+---
+
+<Basis titel="Rezepte" beschreibung="Alle Backrezepte auf einen Blick." aktiv="rezepte">
+  <div class="spalte-breit">
+
+    <div class="seitenkopf">
+      <span class="kicker">Übersicht</span>
+      <h1>Rezepte</h1>
+      <p class="lead">
+        Alles, was bisher aus dem Ofen kam. Die Grundlagen dahinter stehen unter
+        <a href={pfad('wissen/grundlagen')}>Grundlagen</a>.
+      </p>
+    </div>
+
+    <ul class="raster">
+      {rezepte.map((e) => (
+        <Karte
+          ziel={pfad(`rezepte/${e.id}`)}
+          titel={e.data.titel}
+          text={e.data.kartentext ?? e.data.lead}
+          meta={e.data.kartenmeta}
+          bild={e.data.bild}
+          bildAlt={e.data.bildAlt}
+        />
+      ))}
+    </ul>
+
+  </div>
+</Basis>

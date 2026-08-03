@@ -1,0 +1,38 @@
+---
+interface Props {
+  daten: {
+    titel: string;
+    unterzeile?: string;
+    legende?: string;
+    max: number;
+    werte: { name: string; wert: number; anzeige?: string }[];
+  };
+}
+
+const { daten } = Astro.props;
+
+/** 1.5 → "1,5" — deutsches Dezimalkomma, ohne Locale-Überraschungen. */
+const zahl = (n: number) => String(n).replace('.', ',');
+---
+
+<figure class="viz">
+  <p class="viz-titel">{daten.titel}</p>
+  {daten.unterzeile && <p class="viz-unterzeile">{daten.unterzeile}</p>}
+
+  <div class="bp" style={`--bp-max: ${daten.max}`}>
+    {daten.werte.map((w) => {
+      const beschriftung = w.anzeige ?? `${zahl(w.wert)} %`;
+      return (
+        <div class="bp-zeile" style={`--pct: ${w.wert}`}>
+          <span class="bp-name">{w.name}</span>
+          <span class="bp-spur">
+            <span class="bp-balken" title={`${w.name} · ${beschriftung}`}></span>
+          </span>
+          <span class="bp-wert">{beschriftung}</span>
+        </div>
+      );
+    })}
+  </div>
+
+  {daten.legende && <figcaption>{daten.legende}</figcaption>}
+</figure>

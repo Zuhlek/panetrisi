@@ -1,0 +1,59 @@
+---
+import Basis from './Basis.astro';
+import Kennzahlen from '../components/Kennzahlen.astro';
+import Zutaten from '../components/Zutaten.astro';
+import Baeckerprozente from '../components/Baeckerprozente.astro';
+import Zeitplan from '../components/Zeitplan.astro';
+import Blaettern from '../components/Blaettern.astro';
+import type { CollectionEntry } from 'astro:content';
+import type { Kapitel } from '../lib/kapitel';
+
+interface Props {
+  daten: CollectionEntry<'rezepte'>['data'];
+  vorher?: Kapitel;
+  nachher?: Kapitel;
+}
+
+const { daten, vorher, nachher } = Astro.props;
+
+// Zutaten, Bäckerprozente und Zeitplan kommen aus dem Frontmatter und werden
+// hier gesetzt. Der Markdown-Text darunter ist das Vorgehen.
+const hatZutaten = daten.zutaten.length > 0;
+---
+
+<Basis titel={daten.titel} beschreibung={daten.beschreibung ?? daten.lead} aktiv="rezepte">
+  <div class="spalte">
+    <div class="seitenkopf">
+      {daten.kicker && <span class="kicker">{daten.kicker}</span>}
+      <h1>{daten.titel}</h1>
+      <p class="lead">{daten.lead}</p>
+    </div>
+
+    <Kennzahlen eintraege={daten.kennzahlen} />
+
+    {hatZutaten && (
+      <section class="abschnitt" id="zutaten">
+        <h2>Zutaten</h2>
+        <Zutaten gruppen={daten.zutaten} />
+        {daten.baeckerprozente && <Baeckerprozente daten={daten.baeckerprozente} />}
+      </section>
+    )}
+
+    {!hatZutaten && daten.baeckerprozente && (
+      <Baeckerprozente daten={daten.baeckerprozente} />
+    )}
+
+    {daten.zeitplan && (
+      <section class="abschnitt" id="zeitplan">
+        <h2>Zeitplan</h2>
+        <Zeitplan daten={daten.zeitplan} />
+      </section>
+    )}
+
+    <div class="fliesstext">
+      <slot />
+    </div>
+
+    <Blaettern vorher={vorher} nachher={nachher} />
+  </div>
+</Basis>
