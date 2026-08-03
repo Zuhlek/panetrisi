@@ -1,0 +1,46 @@
+name: Seite veröffentlichen
+
+# Bei jedem Push auf den Hauptbranch wird die Seite neu ausgeliefert.
+# "workflow_dispatch" erlaubt zusätzlich einen Start von Hand über den
+# Actions-Tab auf GitHub.
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+# Rechte, die der Deploy braucht
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Nie zwei Deploys gleichzeitig. Laufende werden nicht abgebrochen,
+# damit eine angefangene Veröffentlichung sauber zu Ende geht.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Pages vorbereiten
+        uses: actions/configure-pages@v5
+
+      # Kein Build-Schritt: Die Seite ist reines HTML und wird so hochgeladen,
+      # wie sie im Repository liegt. .git und .github schliesst die Action selbst aus.
+      - name: Dateien hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4

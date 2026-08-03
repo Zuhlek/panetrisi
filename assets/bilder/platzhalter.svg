@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Platzhalter — Bild folgt">
+  <style>
+    .bg  { fill: #f3efe7; }
+    .ink { fill: #8a8279; }
+    .li  { stroke: #c9bfae; }
+    @media (prefers-color-scheme: dark) {
+      .bg  { fill: #221f1b; }
+      .ink { fill: #8a8279; }
+      .li  { stroke: #423d36; }
+    }
+  </style>
+  <rect class="bg" width="800" height="600"/>
+  <g class="li" fill="none" stroke-width="6" stroke-linecap="round">
+    <path d="M250 340c0-52 42-94 94-94h112c52 0 94 42 94 94v10c0 14-11 25-25 25H275c-14 0-25-11-25-25z"/>
+    <path d="M300 300c14-16 30-16 44 0M378 292c14-16 30-16 44 0M456 300c14-16 30-16 44 0"/>
+  </g>
+  <text class="ink" x="400" y="440" text-anchor="middle"
+        font-family="system-ui, -apple-system, sans-serif" font-size="26" letter-spacing="1.5">Bild folgt</text>
+</svg>

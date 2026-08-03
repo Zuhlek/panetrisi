@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baukasten — panetrisi</title>
+<meta name="description" content="Alle Bausteine für neue Rezeptseiten, jeweils mit Beispiel und Code zum Kopieren.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/bilder/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<a class="zum-inhalt" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="kopf">
+  <div class="spalte-breit kopf-innen">
+    <a class="wortmarke" href="index.html">pane<em>trisi</em></a>
+    <nav class="kopf-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Start</a>
+      <a href="sauerteig.html">Sauerteig</a>
+      <a href="grundlagen.html">Grundlagen</a>
+      <a href="rezepte/baguette.html">Rezepte</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+  <div class="spalte">
+
+    <div class="seitenkopf">
+      <span class="kicker">Referenz</span>
+      <h1>Baukasten</h1>
+      <p class="lead">
+        Alle Bausteine für eine neue Seite — jeweils als Beispiel und darunter der
+        Code zum Kopieren. Eine neue Rezeptseite entsteht, indem man
+        <code>rezepte/vorlage.html</code> kopiert und die passenden Blöcke von hier
+        einsetzt.
+      </p>
+    </div>
+
+    <div class="panel panel--tipp">
+      <span class="panel-icon" aria-hidden="true">📌</span>
+      <div class="panel-inhalt">
+        <p>
+          Die Bildpfade in den Beispielen gelten für Seiten im Hauptverzeichnis. In
+          <code>rezepte/</code> steht überall ein <code>../</code> davor, also
+          <code>../assets/bilder/…</code>.
+        </p>
+      </div>
+    </div>
+
+    <nav class="inhalt" aria-label="Alle Bausteine">
+      <h2>Alle Bausteine</h2>
+      <ol>
+        <li><a href="#seitenkopf">Seitenkopf</a></li>
+        <li><a href="#abschnitt">Textabschnitt</a></li>
+        <li><a href="#liste">Aufzählung</a></li>
+        <li><a href="#checkliste">Checkliste</a></li>
+        <li><a href="#zutaten">Zutatenliste</a></li>
+        <li><a href="#schritte">Arbeitsschritte</a></li>
+        <li><a href="#begriffe">Begriffsliste</a></li>
+        <li><a href="#panel-info">Panel: Info</a></li>
+        <li><a href="#panel-titel">Panel mit Titel</a></li>
+        <li><a href="#panel-tipp">Panel: Tipp</a></li>
+        <li><a href="#panel-achtung">Panel: Achtung</a></li>
+        <li><a href="#panel-zutaten">Panel: Zutaten</a></li>
+        <li><a href="#zitat">Zitat</a></li>
+        <li><a href="#tabelle">Tabelle</a></li>
+        <li><a href="#kennzahlen">Kennzahlen</a></li>
+        <li><a href="#bild">Bild mit Legende</a></li>
+        <li><a href="#bildpaar">Bilder nebeneinander</a></li>
+        <li><a href="#raster">Kartenraster</a></li>
+        <li><a href="#bp">Bäckerprozente</a></li>
+        <li><a href="#zeitplan">Zeitplan</a></li>
+        <li><a href="#inhalt">Inhaltsverzeichnis</a></li>
+        <li><a href="#blaettern">Vor und zurück</a></li>
+      </ol>
+    </nav>
+
+    <section class="abschnitt abschnitt--getrennt">
+      <h2 id="gruppe-titel-text">Titel & Text</h2>
+    </section>
+
+    <section class="abschnitt" id="seitenkopf">
+      <h3>Seitenkopf</h3>
+      <p class="gedaempft">Steht zuoberst auf jeder Seite: Kicker, Titel, Lead. Der Kicker ist optional.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <div class="seitenkopf">
+            <span class="kicker">Rezept</span>
+            <h1>Roggenbrot</h1>
+            <p class="lead">
+              Ein kräftiges Mischbrot mit hohem Roggenanteil, gebacken im Gusseisentopf.
+            </p>
+          </div>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;div class=&quot;seitenkopf&quot;&gt;
+  &lt;span class=&quot;kicker&quot;&gt;Rezept&lt;/span&gt;
+  &lt;h1&gt;Roggenbrot&lt;/h1&gt;
+  &lt;p class=&quot;lead&quot;&gt;
+    Ein kräftiges Mischbrot mit hohem Roggenanteil, gebacken im Gusseisentopf.
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt" id="abschnitt">
+      <h3>Textabschnitt</h3>
+      <p class="gedaempft">Jeder inhaltliche Block. <code>.abschnitt</code> setzt den Abstand nach oben, <code>.abschnitt--getrennt</code> zusätzlich eine Trennlinie.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <section class="abschnitt">
+            <h2>Über dieses Brot</h2>
+            <p>
+              Roggen bindet Wasser anders als Weizen. Ein Roggenteig wird deshalb nie
+              so elastisch, wie man es vom Weizenbrot kennt — das ist normal.
+            </p>
+            <h3>Welches Mehl</h3>
+            <p>
+              Am besten frisch gemahlenes Roggenvollkornmehl. <span class="gedaempft">Je
+              mehr Schalenanteile, desto aktiver die Fermentation.</span>
+            </p>
+          </section>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;section class=&quot;abschnitt&quot;&gt;
+  &lt;h2&gt;Über dieses Brot&lt;/h2&gt;
+  &lt;p&gt;
+    Roggen bindet Wasser anders als Weizen. Ein Roggenteig wird deshalb nie
+    so elastisch, wie man es vom Weizenbrot kennt — das ist normal.
+  &lt;/p&gt;
+  &lt;h3&gt;Welches Mehl&lt;/h3&gt;
+  &lt;p&gt;
+    Am besten frisch gemahlenes Roggenvollkornmehl. &lt;span class=&quot;gedaempft&quot;&gt;Je
+    mehr Schalenanteile, desto aktiver die Fermentation.&lt;/span&gt;
+  &lt;/p&gt;
+&lt;/section&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt abschnitt--getrennt">
+      <h2 id="gruppe-listen">Listen</h2>
+    </section>
+
+    <section class="abschnitt" id="liste">
+      <h3>Aufzählung</h3>
+      <p class="gedaempft">Normale Liste mit farbigem Aufzählungszeichen. Funktioniert als <code>&lt;ul&gt;</code> und als <code>&lt;ol&gt;</code>.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <ul class="liste">
+            <li>Gusseisentopf mit Deckel</li>
+            <li>Gärkörbchen, rund oder länglich</li>
+            <li>Teigkarte</li>
+          </ul>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;ul class=&quot;liste&quot;&gt;
+  &lt;li&gt;Gusseisentopf mit Deckel&lt;/li&gt;
+  &lt;li&gt;Gärkörbchen, rund oder länglich&lt;/li&gt;
+  &lt;li&gt;Teigkarte&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt" id="checkliste">
+      <h3>Checkliste</h3>
+      <p class="gedaempft">Für Faustregeln und Voraussetzungen — alles, was man abhaken kann.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <ul class="checkliste">
+            <li>Sauerteig verdoppelt sich innert 2,5 Stunden.</li>
+            <li>Zweimal aufgefrischt innert 24 Stunden.</li>
+            <li>Zutaten auf Raumtemperatur.</li>
+          </ul>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;ul class=&quot;checkliste&quot;&gt;
+  &lt;li&gt;Sauerteig verdoppelt sich innert 2,5 Stunden.&lt;/li&gt;
+  &lt;li&gt;Zweimal aufgefrischt innert 24 Stunden.&lt;/li&gt;
+  &lt;li&gt;Zutaten auf Raumtemperatur.&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt" id="zutaten">
+      <h3>Zutatenliste</h3>
+      <p class="gedaempft">Bezeichnung links, Menge rechts. <code>.zutaten-oder</code> trennt Alternativen. Mehrere <code>&lt;ul&gt;</code> hintereinander ergeben Gruppen.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <ul class="zutaten">
+            <li><span>Roggenvollkornmehl</span><span class="menge">300 g</span></li>
+            <li><span>Weizenmehl Typ 550</span><span class="menge">200 g</span></li>
+            <li class="zutaten-oder">oder</li>
+            <li><span>Ruchmehl</span><span class="menge">500 g</span></li>
+          </ul>
+
+          <ul class="zutaten">
+            <li><span>Wasser</span><span class="menge">390 g</span></li>
+            <li><span>Sauerteig <span class="gedaempft klein">100 % Wasseranteil</span></span><span class="menge">100 g</span></li>
+            <li><span>Salz</span><span class="menge">12 g</span></li>
+          </ul>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;ul class=&quot;zutaten&quot;&gt;
+  &lt;li&gt;&lt;span&gt;Roggenvollkornmehl&lt;/span&gt;&lt;span class=&quot;menge&quot;&gt;300 g&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span&gt;Weizenmehl Typ 550&lt;/span&gt;&lt;span class=&quot;menge&quot;&gt;200 g&lt;/span&gt;&lt;/li&gt;
+  &lt;li class=&quot;zutaten-oder&quot;&gt;oder&lt;/li&gt;
+  &lt;li&gt;&lt;span&gt;Ruchmehl&lt;/span&gt;&lt;span class=&quot;menge&quot;&gt;500 g&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class=&quot;zutaten&quot;&gt;
+  &lt;li&gt;&lt;span&gt;Wasser&lt;/span&gt;&lt;span class=&quot;menge&quot;&gt;390 g&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span&gt;Sauerteig &lt;span class=&quot;gedaempft klein&quot;&gt;100 % Wasseranteil&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;menge&quot;&gt;100 g&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span&gt;Salz&lt;/span&gt;&lt;span class=&quot;menge&quot;&gt;12 g&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt" id="schritte">
+      <h3>Arbeitsschritte</h3>
+      <p class="gedaempft">Nummerierte Schritte. Jeder Schritt darf eine Überschrift, Text, Bilder und Panels enthalten. Die Nummern kommen aus CSS, nicht aus dem HTML.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <ol class="schritte">
+            <li>
+              <h3>Autolyse</h3>
+              <p>Mehl und Wasser vermengen und 60 Minuten abgedeckt ruhen lassen.</p>
+            </li>
+            <li>
+              <h3>Kneten</h3>
+              <p>Sauerteig und Salz beigeben, 10 Minuten auf mittlerer Stufe kneten.</p>
+            </li>
+          </ol>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;ol class=&quot;schritte&quot;&gt;
+  &lt;li&gt;
+    &lt;h3&gt;Autolyse&lt;/h3&gt;
+    &lt;p&gt;Mehl und Wasser vermengen und 60 Minuten abgedeckt ruhen lassen.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h3&gt;Kneten&lt;/h3&gt;
+    &lt;p&gt;Sauerteig und Salz beigeben, 10 Minuten auf mittlerer Stufe kneten.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt" id="begriffe">
+      <h3>Begriffsliste</h3>
+      <p class="gedaempft">Definitionsliste für Glossare — Begriff fett, Erklärung darunter.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <dl class="begriffe">
+            <dt>Stockgare</dt>
+            <dd>Die erste Gärphase nach dem Kneten, meist bei Raumtemperatur.</dd>
+            <dt>Stückgare</dt>
+            <dd>Die zweite Gärphase, nachdem der Teig portioniert und geformt wurde.</dd>
+          </dl>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;dl class=&quot;begriffe&quot;&gt;
+  &lt;dt&gt;Stockgare&lt;/dt&gt;
+  &lt;dd&gt;Die erste Gärphase nach dem Kneten, meist bei Raumtemperatur.&lt;/dd&gt;
+  &lt;dt&gt;Stückgare&lt;/dt&gt;
+  &lt;dd&gt;Die zweite Gärphase, nachdem der Teig portioniert und geformt wurde.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt abschnitt--getrennt">
+      <h2 id="gruppe-panels">Panels</h2>
+    </section>
+
+    <section class="abschnitt" id="panel-info">
+      <h3>Panel: Info</h3>
+      <p class="gedaempft">Für Wissen und Erklärungen. Icon frei wählbar — 💡 💦 🍩 🎉 passen alle.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <div class="panel panel--info">
+            <span class="panel-icon" aria-hidden="true">💡</span>
+            <div class="panel-inhalt">
+              <p>
+                Sauerteig ist ein Mikroorganismus von wilden Hefebakterien, die in
+                Symbiose mit Milchsäurebakterien leben.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;div class=&quot;panel panel--info&quot;&gt;
+  &lt;span class=&quot;panel-icon&quot; aria-hidden=&quot;true&quot;&gt;💡&lt;/span&gt;
+  &lt;div class=&quot;panel-inhalt&quot;&gt;
+    &lt;p&gt;
+      Sauerteig ist ein Mikroorganismus von wilden Hefebakterien, die in
+      Symbiose mit Milchsäurebakterien leben.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt" id="panel-titel">
+      <h3>Panel mit Titel</h3>
+      <p class="gedaempft">Mit <code>.panel-titel</code> bekommt das Panel eine Überschrift. Funktioniert bei allen vier Varianten.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <div class="panel panel--info">
+            <span class="panel-icon" aria-hidden="true">💡</span>
+            <p class="panel-titel">Bassinage</p>
+            <div class="panel-inhalt">
+              <p>
+                Das später beigegebene Wasser wird vom Mehl nicht mehr gleich gut
+                aufgenommen und verdunstet im Ofen anders. Das ergibt eine offenere Krume.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;div class=&quot;panel panel--info&quot;&gt;
+  &lt;span class=&quot;panel-icon&quot; aria-hidden=&quot;true&quot;&gt;💡&lt;/span&gt;
+  &lt;p class=&quot;panel-titel&quot;&gt;Bassinage&lt;/p&gt;
+  &lt;div class=&quot;panel-inhalt&quot;&gt;
+    &lt;p&gt;
+      Das später beigegebene Wasser wird vom Mehl nicht mehr gleich gut
+      aufgenommen und verdunstet im Ofen anders. Das ergibt eine offenere Krume.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt" id="panel-tipp">
+      <h3>Panel: Tipp</h3>
+      <p class="gedaempft">Für Erfahrungswerte und Kniffe. Im PDF war das durchgehend das 📌.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <div class="panel panel--tipp">
+            <span class="panel-icon" aria-hidden="true">📌</span>
+            <p class="panel-titel">Tipp</p>
+            <div class="panel-inhalt">
+              <p>
+                Lagere den Teig in einem Gefäss, an dem sich die Volumenänderung ablesen
+                lässt — zum Beispiel einem rechteckigen Tupperware.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;div class=&quot;panel panel--tipp&quot;&gt;
+  &lt;span class=&quot;panel-icon&quot; aria-hidden=&quot;true&quot;&gt;📌&lt;/span&gt;
+  &lt;p class=&quot;panel-titel&quot;&gt;Tipp&lt;/p&gt;
+  &lt;div class=&quot;panel-inhalt&quot;&gt;
+    &lt;p&gt;
+      Lagere den Teig in einem Gefäss, an dem sich die Volumenänderung ablesen
+      lässt — zum Beispiel einem rechteckigen Tupperware.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt" id="panel-achtung">
+      <h3>Panel: Achtung</h3>
+      <p class="gedaempft">Für alles, was schiefgehen kann. Der Titel gehört dazu: die Farbe allein soll die Warnung nie tragen müssen.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <div class="panel panel--achtung">
+            <span class="panel-icon" aria-hidden="true">🚨</span>
+            <p class="panel-titel">Achtung</p>
+            <div class="panel-inhalt">
+              <p>
+                Wird der Teig beim Kneten wärmer als 28 Grad, kann sich das Glutennetzwerk
+                zurückentwickeln.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;div class=&quot;panel panel--achtung&quot;&gt;
+  &lt;span class=&quot;panel-icon&quot; aria-hidden=&quot;true&quot;&gt;🚨&lt;/span&gt;
+  &lt;p class=&quot;panel-titel&quot;&gt;Achtung&lt;/p&gt;
+  &lt;div class=&quot;panel-inhalt&quot;&gt;
+    &lt;p&gt;
+      Wird der Teig beim Kneten wärmer als 28 Grad, kann sich das Glutennetzwerk
+      zurückentwickeln.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt" id="panel-zutaten">
+      <h3>Panel: Zutaten</h3>
+      <p class="gedaempft">Für kurze Aufzählungen, die im Text hervorstechen sollen.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <div class="panel panel--zutaten">
+            <span class="panel-icon" aria-hidden="true">📃</span>
+            <div class="panel-inhalt">
+              <ul class="liste">
+                <li>Mehl</li>
+                <li>Wasser</li>
+                <li>Treibmittel</li>
+                <li>Salz</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;div class=&quot;panel panel--zutaten&quot;&gt;
+  &lt;span class=&quot;panel-icon&quot; aria-hidden=&quot;true&quot;&gt;📃&lt;/span&gt;
+  &lt;div class=&quot;panel-inhalt&quot;&gt;
+    &lt;ul class=&quot;liste&quot;&gt;
+      &lt;li&gt;Mehl&lt;/li&gt;
+      &lt;li&gt;Wasser&lt;/li&gt;
+      &lt;li&gt;Treibmittel&lt;/li&gt;
+      &lt;li&gt;Salz&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt abschnitt--getrennt">
+      <h2 id="gruppe-zitat">Zitat</h2>
+    </section>
+
+    <section class="abschnitt" id="zitat">
+      <h3>Zitat</h3>
+      <p class="gedaempft">Für Merksätze und Zitate. <code>&lt;cite&gt;</code> ist optional und bekommt automatisch einen Gedankenstrich davor.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <blockquote class="zitat">
+            <p>Der Teig ist bereit, sobald er sich innert 2,5 Stunden verdoppelt.</p>
+            <cite>Faustregel</cite>
+          </blockquote>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;blockquote class=&quot;zitat&quot;&gt;
+  &lt;p&gt;Der Teig ist bereit, sobald er sich innert 2,5 Stunden verdoppelt.&lt;/p&gt;
+  &lt;cite&gt;Faustregel&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt abschnitt--getrennt">
+      <h2 id="gruppe-tabelle">Tabelle</h2>
+    </section>
+
+    <section class="abschnitt" id="tabelle">
+      <h3>Tabelle</h3>
+      <p class="gedaempft">Der Wrapper <code>.tabelle-rollen</code> macht breite Tabellen auf dem Handy seitlich scrollbar, ohne dass die ganze Seite wandert.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <div class="tabelle-rollen">
+            <table class="tabelle">
+              <thead>
+                <tr>
+                  <th scope="col"><span class="visuell-versteckt">Eigenschaft</span></th>
+                  <th scope="col">50 % Wasser</th>
+                  <th scope="col">100 % Wasser</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Pflege</th>
+                  <td>Aufwendig</td>
+                  <td>Einfach</td>
+                </tr>
+                <tr>
+                  <th scope="row">Treibkraft</th>
+                  <td>Konstant und lange</td>
+                  <td>Schnell und kürzer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;div class=&quot;tabelle-rollen&quot;&gt;
+  &lt;table class=&quot;tabelle&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope=&quot;col&quot;&gt;&lt;span class=&quot;visuell-versteckt&quot;&gt;Eigenschaft&lt;/span&gt;&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;50 % Wasser&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;100 % Wasser&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;th scope=&quot;row&quot;&gt;Pflege&lt;/th&gt;
+        &lt;td&gt;Aufwendig&lt;/td&gt;
+        &lt;td&gt;Einfach&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th scope=&quot;row&quot;&gt;Treibkraft&lt;/th&gt;
+        &lt;td&gt;Konstant und lange&lt;/td&gt;
+        &lt;td&gt;Schnell und kürzer&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt abschnitt--getrennt">
+      <h2 id="gruppe-kennzahlen">Kennzahlen</h2>
+    </section>
+
+    <section class="abschnitt" id="kennzahlen">
+      <h3>Kennzahlen</h3>
+      <p class="gedaempft">Die Eckdaten eines Rezepts. Die Kacheln verteilen sich automatisch auf die verfügbare Breite.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <ul class="kennzahlen">
+            <li>
+              <span class="kennzahl-label">Hydration</span>
+              <span class="kennzahl-wert">78<small>%</small></span>
+            </li>
+            <li>
+              <span class="kennzahl-label">Ofen</span>
+              <span class="kennzahl-wert">250<small>°C</small></span>
+            </li>
+            <li>
+              <span class="kennzahl-label">Backzeit</span>
+              <span class="kennzahl-wert">45<small>Min.</small></span>
+            </li>
+            <li>
+              <span class="kennzahl-label">Gesamt</span>
+              <span class="kennzahl-wert">20<small>Std.</small></span>
+            </li>
+          </ul>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;ul class=&quot;kennzahlen&quot;&gt;
+  &lt;li&gt;
+    &lt;span class=&quot;kennzahl-label&quot;&gt;Hydration&lt;/span&gt;
+    &lt;span class=&quot;kennzahl-wert&quot;&gt;78&lt;small&gt;%&lt;/small&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span class=&quot;kennzahl-label&quot;&gt;Ofen&lt;/span&gt;
+    &lt;span class=&quot;kennzahl-wert&quot;&gt;250&lt;small&gt;°C&lt;/small&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span class=&quot;kennzahl-label&quot;&gt;Backzeit&lt;/span&gt;
+    &lt;span class=&quot;kennzahl-wert&quot;&gt;45&lt;small&gt;Min.&lt;/small&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span class=&quot;kennzahl-label&quot;&gt;Gesamt&lt;/span&gt;
+    &lt;span class=&quot;kennzahl-wert&quot;&gt;20&lt;small&gt;Std.&lt;/small&gt;&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt abschnitt--getrennt">
+      <h2 id="gruppe-medien">Medien</h2>
+    </section>
+
+    <section class="abschnitt" id="bild">
+      <h3>Bild mit Legende</h3>
+      <p class="gedaempft"><code>width</code> und <code>height</code> immer angeben — sonst springt das Layout beim Laden. <code>loading="lazy"</code> für alles unterhalb des ersten Bildschirms.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <figure>
+            <img src="assets/bilder/fenstertest.jpg"
+                 alt="Zwei Hände spannen ein dünnes Teigfenster auf."
+                 width="1600" height="868" loading="lazy">
+            <figcaption>
+              Bestanden: Der Teig lässt sich hauchdünn aufspannen, ohne zu reissen.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;figure&gt;
+  &lt;img src=&quot;assets/bilder/fenstertest.jpg&quot;
+       alt=&quot;Zwei Hände spannen ein dünnes Teigfenster auf.&quot;
+       width=&quot;1600&quot; height=&quot;868&quot; loading=&quot;lazy&quot;&gt;
+  &lt;figcaption&gt;
+    Bestanden: Der Teig lässt sich hauchdünn aufspannen, ohne zu reissen.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt" id="bildpaar">
+      <h3>Bilder nebeneinander</h3>
+      <p class="gedaempft">Zwei oder mehr Bilder in einer Reihe. Auf schmalen Bildschirmen stapeln sie sich automatisch untereinander.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <figure>
+            <div class="bildpaar">
+              <img src="assets/bilder/dehnen-falten.jpg" alt="Teig wird angehoben und gefaltet."
+                   width="1500" height="1600" loading="lazy">
+              <img src="assets/bilder/dehnen-falten-schema.png" alt="Schema des Dehnens und Faltens."
+                   width="1400" height="963" loading="lazy">
+            </div>
+            <figcaption>Links in der Schüssel, rechts als Schema.</figcaption>
+          </figure>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;figure&gt;
+  &lt;div class=&quot;bildpaar&quot;&gt;
+    &lt;img src=&quot;assets/bilder/dehnen-falten.jpg&quot; alt=&quot;Teig wird angehoben und gefaltet.&quot;
+         width=&quot;1500&quot; height=&quot;1600&quot; loading=&quot;lazy&quot;&gt;
+    &lt;img src=&quot;assets/bilder/dehnen-falten-schema.png&quot; alt=&quot;Schema des Dehnens und Faltens.&quot;
+         width=&quot;1400&quot; height=&quot;963&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Links in der Schüssel, rechts als Schema.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt abschnitt--getrennt">
+      <h2 id="gruppe-karten">Karten</h2>
+    </section>
+
+    <section class="abschnitt" id="raster">
+      <h3>Kartenraster</h3>
+      <p class="gedaempft">Für Übersichtsseiten. Die ganze Karte ist klickbar — der Link im Titel legt sich per CSS über die gesamte Fläche.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <ul class="raster">
+            <li class="karte">
+              <img src="assets/bilder/platzhalter.svg" alt="" width="800" height="600">
+              <div class="karte-text">
+                <h3><a href="#raster">Roggenbrot</a></h3>
+                <p>Kräftiges Mischbrot aus dem Gusseisentopf.</p>
+                <p class="karte-meta"><span>78 % Hydration</span><span>ca. 20 Std.</span></p>
+              </div>
+            </li>
+            <li class="karte">
+              <img src="assets/bilder/platzhalter.svg" alt="" width="800" height="600">
+              <div class="karte-text">
+                <h3><a href="#raster">Focaccia</a></h3>
+                <p>Flach, salzig, mit viel Olivenöl.</p>
+                <p class="karte-meta"><span>85 % Hydration</span><span>ca. 6 Std.</span></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;ul class=&quot;raster&quot;&gt;
+  &lt;li class=&quot;karte&quot;&gt;
+    &lt;img src=&quot;assets/bilder/platzhalter.svg&quot; alt=&quot;&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;
+    &lt;div class=&quot;karte-text&quot;&gt;
+      &lt;h3&gt;&lt;a href=&quot;#raster&quot;&gt;Roggenbrot&lt;/a&gt;&lt;/h3&gt;
+      &lt;p&gt;Kräftiges Mischbrot aus dem Gusseisentopf.&lt;/p&gt;
+      &lt;p class=&quot;karte-meta&quot;&gt;&lt;span&gt;78 % Hydration&lt;/span&gt;&lt;span&gt;ca. 20 Std.&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;karte&quot;&gt;
+    &lt;img src=&quot;assets/bilder/platzhalter.svg&quot; alt=&quot;&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;
+    &lt;div class=&quot;karte-text&quot;&gt;
+      &lt;h3&gt;&lt;a href=&quot;#raster&quot;&gt;Focaccia&lt;/a&gt;&lt;/h3&gt;
+      &lt;p&gt;Flach, salzig, mit viel Olivenöl.&lt;/p&gt;
+      &lt;p class=&quot;karte-meta&quot;&gt;&lt;span&gt;85 % Hydration&lt;/span&gt;&lt;span&gt;ca. 6 Std.&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt abschnitt--getrennt">
+      <h2 id="gruppe-visualisierungen">Visualisierungen</h2>
+    </section>
+
+    <section class="abschnitt" id="bp">
+      <h3>Bäckerprozente</h3>
+      <p class="gedaempft">Balkendiagramm, alle Zutaten im Verhältnis zum Mehl. <code>--bp-max</code> am Container ist der grösste Wert (in der Regel 100), <code>--pct</code> an der Zeile der Wert der Zutat. Jeder Wert steht auch als Text daneben.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <figure class="viz">
+            <p class="viz-titel">Bäckerprozente</p>
+            <p class="viz-unterzeile">Alle Zutaten im Verhältnis zum Mehl (500 g = 100 %)</p>
+
+            <div class="bp" style="--bp-max: 100">
+              <div class="bp-zeile" style="--pct: 100">
+                <span class="bp-name">Mehl</span>
+                <span class="bp-spur"><span class="bp-balken" title="Mehl · 100 %"></span></span>
+                <span class="bp-wert">100 %</span>
+              </div>
+              <div class="bp-zeile" style="--pct: 78">
+                <span class="bp-name">Wasser</span>
+                <span class="bp-spur"><span class="bp-balken" title="Wasser · 78 %"></span></span>
+                <span class="bp-wert">78 %</span>
+              </div>
+              <div class="bp-zeile" style="--pct: 20">
+                <span class="bp-name">Sauerteig</span>
+                <span class="bp-spur"><span class="bp-balken" title="Sauerteig · 20 %"></span></span>
+                <span class="bp-wert">20 %</span>
+              </div>
+              <div class="bp-zeile" style="--pct: 2.4">
+                <span class="bp-name">Salz</span>
+                <span class="bp-spur"><span class="bp-balken" title="Salz · 2,4 %"></span></span>
+                <span class="bp-wert">2,4 %</span>
+              </div>
+            </div>
+
+            <figcaption>Kurze Einordnung, was man aus dem Diagramm lesen soll.</figcaption>
+          </figure>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;figure class=&quot;viz&quot;&gt;
+  &lt;p class=&quot;viz-titel&quot;&gt;Bäckerprozente&lt;/p&gt;
+  &lt;p class=&quot;viz-unterzeile&quot;&gt;Alle Zutaten im Verhältnis zum Mehl (500 g = 100 %)&lt;/p&gt;
+
+  &lt;div class=&quot;bp&quot; style=&quot;--bp-max: 100&quot;&gt;
+    &lt;div class=&quot;bp-zeile&quot; style=&quot;--pct: 100&quot;&gt;
+      &lt;span class=&quot;bp-name&quot;&gt;Mehl&lt;/span&gt;
+      &lt;span class=&quot;bp-spur&quot;&gt;&lt;span class=&quot;bp-balken&quot; title=&quot;Mehl · 100 %&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;bp-wert&quot;&gt;100 %&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;bp-zeile&quot; style=&quot;--pct: 78&quot;&gt;
+      &lt;span class=&quot;bp-name&quot;&gt;Wasser&lt;/span&gt;
+      &lt;span class=&quot;bp-spur&quot;&gt;&lt;span class=&quot;bp-balken&quot; title=&quot;Wasser · 78 %&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;bp-wert&quot;&gt;78 %&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;bp-zeile&quot; style=&quot;--pct: 20&quot;&gt;
+      &lt;span class=&quot;bp-name&quot;&gt;Sauerteig&lt;/span&gt;
+      &lt;span class=&quot;bp-spur&quot;&gt;&lt;span class=&quot;bp-balken&quot; title=&quot;Sauerteig · 20 %&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;bp-wert&quot;&gt;20 %&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;bp-zeile&quot; style=&quot;--pct: 2.4&quot;&gt;
+      &lt;span class=&quot;bp-name&quot;&gt;Salz&lt;/span&gt;
+      &lt;span class=&quot;bp-spur&quot;&gt;&lt;span class=&quot;bp-balken&quot; title=&quot;Salz · 2,4 %&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;bp-wert&quot;&gt;2,4 %&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;figcaption&gt;Kurze Einordnung, was man aus dem Diagramm lesen soll.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt" id="zeitplan">
+      <h3>Zeitplan</h3>
+      <p class="gedaempft">Gestapelter Balken über den ganzen Ablauf. <code>--gesamt</code> ist die Gesamtdauer in Minuten, <code>--dauer</code> die Dauer der Phase, <code>data-stufe</code> von 1 bis 6 die Farbe (früh hell, spät dunkel). Beschriftet wird in der Legende, damit im Balken nichts abgeschnitten wird.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <figure class="viz">
+            <p class="viz-titel">Vom Anrühren bis aus dem Ofen</p>
+            <p class="viz-unterzeile">Rund 16 Stunden, davon etwa 45 Minuten aktive Arbeit</p>
+
+            <div class="zeitplan" style="--gesamt: 985">
+              <div class="zp-spur">
+                <span class="zp-phase" data-stufe="1" style="--dauer: 60"  title="Autolyse · 60 Min."></span>
+                <span class="zp-phase" data-stufe="2" style="--dauer: 20"  title="Kneten · 20 Min."></span>
+                <span class="zp-phase" data-stufe="3" style="--dauer: 180" title="Stockgare · 3 Std."></span>
+                <span class="zp-phase" data-stufe="4" style="--dauer: 600" title="Kaltgare · 10 Std."></span>
+                <span class="zp-phase" data-stufe="5" style="--dauer: 90"  title="Formen und Stückgare · 1,5 Std."></span>
+                <span class="zp-phase" data-stufe="6" style="--dauer: 35"  title="Backen · 35 Min."></span>
+              </div>
+
+              <ol class="zp-legende">
+                <li><span class="zp-punkt" data-stufe="1" aria-hidden="true"></span><div><b>Autolyse</b><span>60 Min.</span></div></li>
+                <li><span class="zp-punkt" data-stufe="2" aria-hidden="true"></span><div><b>Kneten</b><span>20 Min.</span></div></li>
+                <li><span class="zp-punkt" data-stufe="3" aria-hidden="true"></span><div><b>Stockgare</b><span>3 Std.</span></div></li>
+                <li><span class="zp-punkt" data-stufe="4" aria-hidden="true"></span><div><b>Kaltgare</b><span>10 Std.</span></div></li>
+                <li><span class="zp-punkt" data-stufe="5" aria-hidden="true"></span><div><b>Formen &amp; Stückgare</b><span>1,5 Std.</span></div></li>
+                <li><span class="zp-punkt" data-stufe="6" aria-hidden="true"></span><div><b>Backen</b><span>35 Min.</span></div></li>
+              </ol>
+            </div>
+
+            <figcaption>Kurze Einordnung, was man aus dem Diagramm lesen soll.</figcaption>
+          </figure>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;figure class=&quot;viz&quot;&gt;
+  &lt;p class=&quot;viz-titel&quot;&gt;Vom Anrühren bis aus dem Ofen&lt;/p&gt;
+  &lt;p class=&quot;viz-unterzeile&quot;&gt;Rund 16 Stunden, davon etwa 45 Minuten aktive Arbeit&lt;/p&gt;
+
+  &lt;div class=&quot;zeitplan&quot; style=&quot;--gesamt: 985&quot;&gt;
+    &lt;div class=&quot;zp-spur&quot;&gt;
+      &lt;span class=&quot;zp-phase&quot; data-stufe=&quot;1&quot; style=&quot;--dauer: 60&quot;  title=&quot;Autolyse · 60 Min.&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;zp-phase&quot; data-stufe=&quot;2&quot; style=&quot;--dauer: 20&quot;  title=&quot;Kneten · 20 Min.&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;zp-phase&quot; data-stufe=&quot;3&quot; style=&quot;--dauer: 180&quot; title=&quot;Stockgare · 3 Std.&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;zp-phase&quot; data-stufe=&quot;4&quot; style=&quot;--dauer: 600&quot; title=&quot;Kaltgare · 10 Std.&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;zp-phase&quot; data-stufe=&quot;5&quot; style=&quot;--dauer: 90&quot;  title=&quot;Formen und Stückgare · 1,5 Std.&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;zp-phase&quot; data-stufe=&quot;6&quot; style=&quot;--dauer: 35&quot;  title=&quot;Backen · 35 Min.&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;ol class=&quot;zp-legende&quot;&gt;
+      &lt;li&gt;&lt;span class=&quot;zp-punkt&quot; data-stufe=&quot;1&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Autolyse&lt;/b&gt;&lt;span&gt;60 Min.&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span class=&quot;zp-punkt&quot; data-stufe=&quot;2&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Kneten&lt;/b&gt;&lt;span&gt;20 Min.&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span class=&quot;zp-punkt&quot; data-stufe=&quot;3&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Stockgare&lt;/b&gt;&lt;span&gt;3 Std.&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span class=&quot;zp-punkt&quot; data-stufe=&quot;4&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Kaltgare&lt;/b&gt;&lt;span&gt;10 Std.&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span class=&quot;zp-punkt&quot; data-stufe=&quot;5&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Formen &amp;amp; Stückgare&lt;/b&gt;&lt;span&gt;1,5 Std.&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span class=&quot;zp-punkt&quot; data-stufe=&quot;6&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Backen&lt;/b&gt;&lt;span&gt;35 Min.&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+
+  &lt;figcaption&gt;Kurze Einordnung, was man aus dem Diagramm lesen soll.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt abschnitt--getrennt">
+      <h2 id="gruppe-navigation">Navigation</h2>
+    </section>
+
+    <section class="abschnitt" id="inhalt">
+      <h3>Inhaltsverzeichnis</h3>
+      <p class="gedaempft">Für lange Seiten. Die Ziele sind die <code>id</code>s der Abschnitte.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <nav class="inhalt" aria-label="Inhalt dieser Seite">
+            <h2>Auf dieser Seite</h2>
+            <ol>
+              <li><a href="#inhalt">Zutaten</a></li>
+              <li><a href="#inhalt">Zeitplan</a></li>
+              <li><a href="#inhalt">Vorgehen</a></li>
+              <li><a href="#inhalt">Varianten</a></li>
+            </ol>
+          </nav>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;nav class=&quot;inhalt&quot; aria-label=&quot;Inhalt dieser Seite&quot;&gt;
+  &lt;h2&gt;Auf dieser Seite&lt;/h2&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;a href=&quot;#inhalt&quot;&gt;Zutaten&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#inhalt&quot;&gt;Zeitplan&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#inhalt&quot;&gt;Vorgehen&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#inhalt&quot;&gt;Varianten&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt" id="blaettern">
+      <h3>Vor und zurück</h3>
+      <p class="gedaempft">Steht ganz am Ende einer Seite, direkt vor dem Fuss.</p>
+      <div class="demo">
+        <div class="demo-buehne">
+          <nav class="blaettern" aria-label="Weitere Kapitel">
+            <a href="#blaettern"><small>Zurück</small>Sauerteig</a>
+            <a class="weiter" href="#blaettern"><small>Weiter</small>Baguette</a>
+          </nav>
+        </div>
+        <div class="demo-code">
+          <pre><code>&lt;nav class=&quot;blaettern&quot; aria-label=&quot;Weitere Kapitel&quot;&gt;
+  &lt;a href=&quot;#blaettern&quot;&gt;&lt;small&gt;Zurück&lt;/small&gt;Sauerteig&lt;/a&gt;
+  &lt;a class=&quot;weiter&quot; href=&quot;#blaettern&quot;&gt;&lt;small&gt;Weiter&lt;/small&gt;Baguette&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <nav class="blaettern" aria-label="Weitere Seiten">
+      <a href="index.html"><small>Zurück</small>Start</a>
+      <a class="weiter" href="rezepte/vorlage.html"><small>Weiter</small>Leere Rezeptvorlage</a>
+    </nav>
+
+  </div>
+</main>
+
+<footer class="fuss">
+  <div class="spalte-breit fuss-innen">
+    <p>panetrisi — Notizen aus der eigenen Küche.</p>
+    <p><a href="komponenten.html">Baukasten</a></p>
+  </div>
+</footer>
+
+<script src="assets/js/kopieren.js" defer></script>
+
+</body>
+</html>

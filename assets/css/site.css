@@ -1,0 +1,912 @@
+/* ==========================================================================
+   panetrisi — zentrales Stylesheet
+   ==========================================================================
+   Alle Seiten laden nur diese eine Datei. Layoutänderungen passieren hier,
+   nie in den einzelnen HTML-Dateien.
+
+   Inhalt
+     1. Farb-Tokens (hell / dunkel)
+     2. Grundlagen & Layout
+     3. Kopf und Fuss
+     4. Titel & Textbausteine
+     5. Listen
+     6. Panels (Info, Tipp, Achtung, Zutaten)
+     7. Zitat
+     8. Tabellen
+     9. Kennzahlen
+    10. Medien
+    11. Karten & Raster
+    12. Visualisierungen (Bäckerprozente, Zeitplan)
+    13. Navigation im Text (Inhalt, Blättern)
+    14. Baukasten-Seite
+    15. Druck
+   ========================================================================== */
+
+/* --- 1. Farb-Tokens ------------------------------------------------------
+   Hell ist die Basis. Dunkel wird zweimal deklariert: einmal für die
+   OS-Einstellung, einmal für ein allfälliges data-theme="dark" am <html>,
+   damit ein späterer Umschalter in beide Richtungen gewinnt.
+   Die Diagrammfarben sind gegen die Flächenfarben geprüft (Helligkeitsband,
+   Chroma, Kontrast, monotone Ordinalrampe).
+   -------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+
+  --flaeche-seite:  #faf8f4;
+  --flaeche-karte:  #fffefb;
+  --flaeche-sanft:  #f3efe7;
+
+  --ink-primaer:    #1a1714;
+  --ink-sekundaer:  #57514a;
+  --ink-gedaempft:  #8a8279;
+
+  --linie:          #e6e0d6;
+  --linie-stark:    #d6cec0;
+
+  --link:           #9c421f;
+  --link-hover:     #7a3217;
+
+  --serie:          #c0562a;
+  --spur:           #efe9df;
+
+  --stufe-1:        #dea849;
+  --stufe-2:        #c98735;
+  --stufe-3:        #b06a29;
+  --stufe-4:        #935122;
+  --stufe-5:        #77401d;
+  --stufe-6:        #5c2e18;
+
+  --panel-info-linie:     #c0562a;
+  --panel-info-flaeche:   #fdf3ec;
+  --panel-tipp-linie:     #8a8279;
+  --panel-tipp-flaeche:   #f4f1ea;
+  --panel-achtung-linie:  #d03b3b;
+  --panel-achtung-flaeche:#fdeeed;
+  --panel-zutaten-linie:  #57514a;
+  --panel-zutaten-flaeche:#f7f4ee;
+
+  --radius:       10px;
+  --radius-klein: 6px;
+  --spalte:       min(70ch, 100% - 3rem);
+  --spalte-breit: min(78rem, 100% - 3rem);
+
+  --sans:  system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --mono:  ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+
+    --flaeche-seite:  #141210;
+    --flaeche-karte:  #1c1a17;
+    --flaeche-sanft:  #221f1b;
+
+    --ink-primaer:    #f5f1ea;
+    --ink-sekundaer:  #c4bcb0;
+    --ink-gedaempft:  #8a8279;
+
+    --linie:          #2e2b26;
+    --linie-stark:    #423d36;
+
+    --link:           #e8a271;
+    --link-hover:     #f2bb92;
+
+    --serie:          #cf7840;
+    --spur:           #2b2823;
+
+    --stufe-1:        #f6cd85;
+    --stufe-2:        #e9ae60;
+    --stufe-3:        #d68c44;
+    --stufe-4:        #bd6e31;
+    --stufe-5:        #9d5527;
+    --stufe-6:        #7d411f;
+
+    --panel-info-linie:     #cf7840;
+    --panel-info-flaeche:   #241d18;
+    --panel-tipp-linie:     #8a8279;
+    --panel-tipp-flaeche:   #201e1a;
+    --panel-achtung-linie:  #e06565;
+    --panel-achtung-flaeche:#2a1b19;
+    --panel-zutaten-linie:  #c4bcb0;
+    --panel-zutaten-flaeche:#1f1d19;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --flaeche-seite:  #141210;
+  --flaeche-karte:  #1c1a17;
+  --flaeche-sanft:  #221f1b;
+
+  --ink-primaer:    #f5f1ea;
+  --ink-sekundaer:  #c4bcb0;
+  --ink-gedaempft:  #8a8279;
+
+  --linie:          #2e2b26;
+  --linie-stark:    #423d36;
+
+  --link:           #e8a271;
+  --link-hover:     #f2bb92;
+
+  --serie:          #cf7840;
+  --spur:           #2b2823;
+
+  --stufe-1:        #f6cd85;
+  --stufe-2:        #e9ae60;
+  --stufe-3:        #d68c44;
+  --stufe-4:        #bd6e31;
+  --stufe-5:        #9d5527;
+  --stufe-6:        #7d411f;
+
+  --panel-info-linie:     #cf7840;
+  --panel-info-flaeche:   #241d18;
+  --panel-tipp-linie:     #8a8279;
+  --panel-tipp-flaeche:   #201e1a;
+  --panel-achtung-linie:  #e06565;
+  --panel-achtung-flaeche:#2a1b19;
+  --panel-zutaten-linie:  #c4bcb0;
+  --panel-zutaten-flaeche:#1f1d19;
+}
+
+/* --- 2. Grundlagen & Layout --------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--flaeche-seite);
+  color: var(--ink-primaer);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+p, ul, ol, dl, table, figure, pre { margin: 0 0 1.15em; }
+
+a {
+  color: var(--link);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+a:hover { color: var(--link-hover); }
+
+:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--linie);
+  margin: 3rem 0;
+}
+
+code, kbd, pre { font-family: var(--mono); }
+:not(pre) > code {
+  background: var(--flaeche-sanft);
+  border-radius: 4px;
+  padding: 0.12em 0.35em;
+  font-size: 0.88em;
+}
+
+.visuell-versteckt {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
+.spalte       { width: var(--spalte);       margin-inline: auto; }
+.spalte-breit { width: var(--spalte-breit); margin-inline: auto; }
+
+/* Ein Element aus der Textspalte ausbrechen lassen (breite Bilder, Diagramme) */
+.ausbrechen {
+  width: min(78rem, 100vw - 3rem);
+  margin-inline: calc(50% - min(39rem, 50vw - 1.5rem));
+}
+
+/* Sprungmarke für Tastaturnutzung */
+.zum-inhalt {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--flaeche-karte);
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--radius-klein);
+  padding: 0.5rem 0.9rem;
+  z-index: 10;
+}
+.zum-inhalt:focus { left: 1rem; top: 1rem; }
+
+/* --- 3. Kopf und Fuss --------------------------------------------------- */
+
+.kopf {
+  border-bottom: 1px solid var(--linie);
+  background: var(--flaeche-seite);
+}
+
+.kopf-innen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 2rem;
+  padding-block: 1.25rem;
+}
+
+.wortmarke {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ink-primaer);
+  text-decoration: none;
+  margin-right: auto;
+}
+.wortmarke:hover { color: var(--ink-primaer); }
+.wortmarke em { font-style: normal; color: var(--serie); }
+
+.kopf-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  font-size: 0.95rem;
+}
+.kopf-nav a { color: var(--ink-sekundaer); text-decoration: none; }
+.kopf-nav a:hover { color: var(--ink-primaer); }
+.kopf-nav a[aria-current="page"] {
+  color: var(--ink-primaer);
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+  text-decoration-color: var(--serie);
+  text-decoration-thickness: 2px;
+}
+
+.fuss {
+  margin-top: 5rem;
+  padding-block: 2rem 3rem;
+  border-top: 1px solid var(--linie);
+  color: var(--ink-gedaempft);
+  font-size: 0.9rem;
+}
+.fuss-innen {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+}
+.fuss a { color: var(--ink-sekundaer); }
+
+/* --- 4. Titel & Textbausteine ------------------------------------------- */
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2rem, 1.35rem + 2.6vw, 3.1rem); }
+h2 { font-size: clamp(1.45rem, 1.2rem + 1vw, 1.95rem); }
+h3 { font-size: 1.2rem; }
+h4 { font-family: var(--sans); font-size: 1.02rem; }
+
+/* Seitenkopf: Kicker, Titel, Lead */
+.seitenkopf { padding-block: 3.5rem 0.5rem; }
+.seitenkopf h1 { margin-bottom: 0.35em; }
+
+.kicker {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--serie);
+  margin-bottom: 0.9rem;
+}
+
+.lead {
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--ink-sekundaer);
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+/* Textsektion: Abstand und Trennlinie kommen vom Abschnitt, nicht vom h2 */
+.abschnitt { margin-top: 3.5rem; }
+.abschnitt > h2 { margin-bottom: 0.9rem; }
+.abschnitt--getrennt { border-top: 1px solid var(--linie); padding-top: 3rem; }
+.abschnitt > :last-child { margin-bottom: 0; }
+
+/* Untergeordnete Überschrift innerhalb eines Abschnitts */
+.abschnitt h3 { margin-top: 2.25rem; }
+
+.gedaempft { color: var(--ink-sekundaer); }
+.klein     { font-size: 0.9rem; }
+
+/* --- 5. Listen ---------------------------------------------------------- */
+
+.liste { padding-left: 1.25rem; }
+.liste li { margin-bottom: 0.4rem; }
+.liste li::marker { color: var(--serie); }
+
+/* Zutatenliste: Bezeichnung links, Menge rechts */
+.zutaten {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid var(--linie);
+}
+.zutaten li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--linie);
+}
+.zutaten .menge {
+  color: var(--ink-sekundaer);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.zutaten li.zutaten-oder {
+  justify-content: center;
+  border-bottom: 0;
+  padding: 0.35rem 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-gedaempft);
+}
+
+/* Nummerierte Arbeitsschritte */
+.schritte { padding-left: 0; list-style: none; counter-reset: schritt; }
+.schritte > li {
+  counter-increment: schritt;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.75rem;
+}
+.schritte > li::before {
+  content: counter(schritt);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.95rem;
+  height: 1.95rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--linie-stark);
+  color: var(--ink-sekundaer);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  background: var(--flaeche-karte);
+}
+.schritte h3,
+.schritte h4 {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  margin: 0.15rem 0 0.3rem;
+}
+.schritte > li > :last-child { margin-bottom: 0; }
+
+/* Begriffsliste */
+.begriffe { margin: 0; }
+.begriffe dt {
+  font-weight: 600;
+  margin-top: 1.35rem;
+}
+.begriffe dt:first-child { margin-top: 0; }
+.begriffe dd {
+  margin: 0.2rem 0 0;
+  color: var(--ink-sekundaer);
+}
+
+/* Checkliste */
+.checkliste { list-style: none; padding: 0; }
+.checkliste li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.45rem;
+}
+.checkliste li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.55em;
+  width: 0.5rem;
+  height: 0.85rem;
+  border: solid var(--serie);
+  border-width: 0 2px 2px 0;
+  rotate: 45deg;
+  translate: 0 -0.4em;
+}
+
+/* --- 6. Panels ---------------------------------------------------------- */
+
+.panel {
+  --panel-linie:   var(--panel-tipp-linie);
+  --panel-flaeche: var(--panel-tipp-flaeche);
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: 0.15rem 0.85rem;
+  border-left: 3px solid var(--panel-linie);
+  background: var(--panel-flaeche);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.1rem 1.35rem;
+  margin: 2rem 0;
+}
+.panel--info    { --panel-linie: var(--panel-info-linie);    --panel-flaeche: var(--panel-info-flaeche); }
+.panel--tipp    { --panel-linie: var(--panel-tipp-linie);    --panel-flaeche: var(--panel-tipp-flaeche); }
+.panel--achtung { --panel-linie: var(--panel-achtung-linie); --panel-flaeche: var(--panel-achtung-flaeche); }
+.panel--zutaten { --panel-linie: var(--panel-zutaten-linie); --panel-flaeche: var(--panel-zutaten-flaeche); }
+
+.panel-icon {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.panel-titel {
+  grid-column: 2;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-sekundaer);
+  margin: 0.2rem 0 0.3rem;
+}
+.panel-inhalt { grid-column: 2; }
+.panel-inhalt > :last-child { margin-bottom: 0; }
+/* Ohne Titel rutscht der Inhalt neben das Icon in die erste Zeile */
+.panel-icon + .panel-inhalt { grid-row: 1; }
+
+/* --- 7. Zitat ----------------------------------------------------------- */
+
+.zitat {
+  margin: 2.5rem 0;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  border-left: 3px solid var(--linie-stark);
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--ink-primaer);
+  text-wrap: pretty;
+}
+.zitat p { margin-bottom: 0.6rem; }
+.zitat cite {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-style: normal;
+  color: var(--ink-gedaempft);
+}
+.zitat cite::before { content: "— "; }
+
+/* --- 8. Tabellen -------------------------------------------------------- */
+
+.tabelle-rollen { overflow-x: auto; margin: 2rem 0; }
+
+.tabelle {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin: 0;
+}
+.tabelle th,
+.tabelle td {
+  text-align: left;
+  padding: 0.7rem 1rem 0.7rem 0;
+  border-bottom: 1px solid var(--linie);
+  vertical-align: top;
+}
+.tabelle thead th {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-gedaempft);
+  border-bottom: 1px solid var(--linie-stark);
+}
+.tabelle tbody th {
+  font-weight: 600;
+  color: var(--ink-primaer);
+  padding-right: 1.5rem;
+  white-space: nowrap;
+}
+.tabelle td { color: var(--ink-sekundaer); }
+.tabelle .zahl { font-variant-numeric: tabular-nums; text-align: right; padding-right: 0; }
+
+/* --- 9. Kennzahlen ------------------------------------------------------ */
+
+.kennzahlen {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 1px;
+  background: var(--linie);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.kennzahlen > * {
+  background: var(--flaeche-karte);
+  padding: 0.9rem 1.1rem;
+  margin: 0;
+}
+.kennzahl-label {
+  display: block;
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-gedaempft);
+  margin-bottom: 0.2rem;
+}
+.kennzahl-wert {
+  display: block;
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.15;
+  /* bewusst proportionale Ziffern: tabular-nums lässt grosse Zahlen locker wirken */
+}
+.kennzahl-wert small {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--ink-sekundaer);
+  margin-left: 0.15em;
+}
+
+/* --- 10. Medien --------------------------------------------------------- */
+
+figure { margin: 2.75rem 0; }
+figure img { border-radius: var(--radius); }
+figcaption {
+  margin-top: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--ink-gedaempft);
+  text-wrap: pretty;
+}
+
+.bildpaar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+  gap: 1rem;
+  margin-bottom: 0;
+}
+.bildpaar img { border-radius: var(--radius); }
+
+/* --- 11. Karten & Raster ------------------------------------------------ */
+
+.raster {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
+  gap: 1.75rem;
+}
+
+.karte {
+  position: relative;
+  background: var(--flaeche-karte);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.karte:hover { border-color: var(--linie-stark); transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) {
+  .karte, .karte:hover { transition: none; transform: none; }
+}
+
+.karte img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+  border-bottom: 1px solid var(--linie);
+}
+
+.karte-text { padding: 1.15rem 1.3rem 1.4rem; }
+.karte-text h2, .karte-text h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.35rem;
+}
+.karte-text h2 a, .karte-text h3 a { color: inherit; text-decoration: none; }
+/* ganze Karte klickbar, ohne den Link zu verschachteln */
+.karte-text h2 a::after,
+.karte-text h3 a::after { content: ""; position: absolute; inset: 0; }
+.karte-text p {
+  color: var(--ink-sekundaer);
+  font-size: 0.95rem;
+  margin: 0 0 0.8rem;
+}
+.karte-text > :last-child { margin-bottom: 0; }
+
+.karte-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.9rem;
+  font-size: 0.82rem;
+  color: var(--ink-gedaempft);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- 12. Visualisierungen ----------------------------------------------
+   Reines CSS, keine Bibliothek, kein JavaScript.
+   -------------------------------------------------------------------- */
+
+.viz {
+  margin: 2.5rem 0;
+  padding: 1.5rem 1.5rem 1.35rem;
+  background: var(--flaeche-karte);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+}
+.viz-titel {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+}
+.viz-unterzeile {
+  font-size: 0.88rem;
+  color: var(--ink-sekundaer);
+  margin: 0 0 1.5rem;
+}
+.viz figcaption { margin-top: 1.2rem; }
+
+/* Bäckerprozente — Balken, eine Serie, eine Farbe.
+   <div class="bp" style="--bp-max: 100">
+     <div class="bp-zeile" style="--pct: 78"> … </div>
+   --bp-max ist der grösste Wert im Diagramm (in der Regel das Mehl mit 100). */
+.bp { --bp-max: 100; display: grid; gap: 0.6rem; }
+
+.bp-zeile {
+  display: grid;
+  grid-template-columns: minmax(6rem, 10rem) 1fr 3.5rem;
+  align-items: center;
+  gap: 0.9rem;
+}
+.bp-name { font-size: 0.92rem; color: var(--ink-sekundaer); }
+.bp-spur {
+  background: var(--spur);
+  border-radius: 2px;
+  height: 12px;                 /* dünne Marke, deutlich unter 24 px */
+}
+.bp-balken {
+  display: block;
+  height: 100%;
+  min-width: 4px;
+  width: calc(var(--pct) / var(--bp-max) * 100%);
+  background: var(--serie);
+  border-radius: 0 4px 4px 0;   /* 4 px am Datenende, eckig an der Grundlinie */
+}
+.bp-wert {
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* Zeitplan — gestapelter Balken über den ganzen Ablauf plus Legende.
+   <div class="zeitplan" style="--gesamt: 1290">   (Gesamtdauer in Minuten)
+     <span class="zp-phase" data-stufe="1" style="--dauer: 30"></span> */
+.zeitplan { display: grid; gap: 1.15rem; }
+
+.zp-spur {
+  display: flex;
+  gap: 2px;                     /* Flächen-Spalt trennt die Segmente, kein Rahmen */
+  height: 14px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.zp-phase {
+  flex: 0 1 auto;
+  width: calc(var(--dauer) / var(--gesamt) * 100%);
+  min-width: 3px;
+  background: var(--stufe-3);
+}
+.zp-phase[data-stufe="1"] { background: var(--stufe-1); }
+.zp-phase[data-stufe="2"] { background: var(--stufe-2); }
+.zp-phase[data-stufe="3"] { background: var(--stufe-3); }
+.zp-phase[data-stufe="4"] { background: var(--stufe-4); }
+.zp-phase[data-stufe="5"] { background: var(--stufe-5); }
+.zp-phase[data-stufe="6"] { background: var(--stufe-6); }
+
+/* Die Legende trägt die Beschriftung, damit im Balken nichts abgeschnitten wird */
+.zp-legende {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(11rem, 100%), 1fr));
+  gap: 0.65rem 1.5rem;
+  font-size: 0.9rem;
+}
+.zp-legende li {
+  display: grid;
+  grid-template-columns: 10px 1fr;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.zp-punkt {
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  background: var(--stufe-3);
+  translate: 0 1px;
+}
+.zp-punkt[data-stufe="1"] { background: var(--stufe-1); }
+.zp-punkt[data-stufe="2"] { background: var(--stufe-2); }
+.zp-punkt[data-stufe="3"] { background: var(--stufe-3); }
+.zp-punkt[data-stufe="4"] { background: var(--stufe-4); }
+.zp-punkt[data-stufe="5"] { background: var(--stufe-5); }
+.zp-punkt[data-stufe="6"] { background: var(--stufe-6); }
+
+.zp-legende b { font-weight: 600; display: block; }
+.zp-legende span:not(.zp-punkt) {
+  color: var(--ink-sekundaer);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+}
+
+/* Windows-Kontrastmodus: Marken bekommen sichtbare Ränder */
+@media (forced-colors: active) {
+  .bp-balken, .zp-phase, .zp-punkt { border: 1px solid CanvasText; }
+}
+
+/* --- 13. Navigation im Text --------------------------------------------- */
+
+/* Inhaltsverzeichnis für lange Seiten */
+.inhalt {
+  background: var(--flaeche-karte);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  margin: 2.5rem 0;
+}
+.inhalt h2 {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-gedaempft);
+  margin: 0 0 0.7rem;
+}
+.inhalt ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  columns: 2;
+  column-gap: 2rem;
+  font-size: 0.95rem;
+}
+@media (max-width: 34rem) { .inhalt ol { columns: 1; } }
+.inhalt li { margin-bottom: 0.3rem; break-inside: avoid; }
+
+/* Vor / zurück am Seitenende */
+.blaettern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+  gap: 1rem;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--linie);
+}
+.blaettern a {
+  display: block;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche-karte);
+  text-decoration: none;
+  color: var(--ink-primaer);
+}
+.blaettern a:hover { border-color: var(--linie-stark); }
+.blaettern small {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-gedaempft);
+  margin-bottom: 0.15rem;
+}
+.blaettern .weiter { text-align: right; }
+
+/* --- 14. Baukasten-Seite ------------------------------------------------ */
+
+.demo {
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  margin: 1.25rem 0 3rem;
+  overflow: hidden;
+  background: var(--flaeche-karte);
+}
+.demo-buehne { padding: 1.5rem; }
+.demo-buehne > :first-child { margin-top: 0; }
+.demo-buehne > :last-child { margin-bottom: 0; }
+/* Bausteine, die sonst ihren eigenen Aussenabstand mitbringen, in der Demo neutralisieren */
+.demo-buehne > .seitenkopf { padding-block: 0; }
+.demo-buehne > .panel,
+.demo-buehne > .viz,
+.demo-buehne > .zitat,
+.demo-buehne > figure,
+.demo-buehne > .kennzahlen,
+.demo-buehne > .tabelle-rollen,
+.demo-buehne > .inhalt { margin-block: 0; }
+.demo-buehne > .blaettern { margin-top: 0; padding-top: 0; border-top: 0; }
+
+.demo-code {
+  position: relative;
+  border-top: 1px solid var(--linie);
+  background: var(--flaeche-sanft);
+}
+.demo-code pre {
+  margin: 0;
+  padding: 1.1rem 1.3rem;
+  overflow-x: auto;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--ink-sekundaer);
+  tab-size: 2;
+}
+.kopier-knopf {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--radius-klein);
+  background: var(--flaeche-karte);
+  color: var(--ink-sekundaer);
+  cursor: pointer;
+}
+.kopier-knopf:hover { color: var(--ink-primaer); border-color: var(--ink-gedaempft); }
+
+/* --- 15. Druck ----------------------------------------------------------
+   Rezepte werden ausgedruckt: Navigation und Flächen weg, Text schwarz.
+   -------------------------------------------------------------------- */
+@media print {
+  :root {
+    --flaeche-seite: #fff;
+    --flaeche-karte: #fff;
+    --flaeche-sanft: #fff;
+    --ink-primaer: #000;
+    --ink-sekundaer: #333;
+    --ink-gedaempft: #555;
+    --linie: #ccc;
+    --linie-stark: #999;
+  }
+  body { font-size: 10.5pt; }
+  .kopf-nav, .fuss, .blaettern, .inhalt, .kopier-knopf, .nicht-drucken { display: none; }
+  .spalte, .spalte-breit, .ausbrechen { width: 100%; margin-inline: 0; }
+  .viz, .karte, .panel, .demo { border: 1px solid #ccc; break-inside: avoid; }
+  .schritte > li, figure, .zutaten li { break-inside: avoid; }
+  h1, h2, h3 { break-after: avoid; }
+  a { color: #000; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; color: #555; }
+}

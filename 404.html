@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nicht gefunden — panetrisi</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/panetrisi/assets/bilder/favicon.svg" type="image/svg+xml">
+<!-- Bewusst mit eigenem, eingebettetem CSS und absoluten Pfaden: Diese Seite wird
+     auch unter Adressen wie /panetrisi/gibt/es/nicht ausgeliefert, relative Pfade
+     würden dort ins Leere zeigen.
+     Bei einer eigenen Domain überall das /panetrisi-Präfix entfernen. -->
+<style>
+  :root {
+    color-scheme: light;
+    --flaeche: #faf8f4;
+    --ink: #1a1714;
+    --ink-2: #57514a;
+    --link: #9c421f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --flaeche: #141210;
+      --ink: #f5f1ea;
+      --ink-2: #c4bcb0;
+      --link: #e8a271;
+    }
+  }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    background: var(--flaeche);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.65;
+    text-align: center;
+  }
+  h1 {
+    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 1.3rem + 2vw, 2.6rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.5rem;
+  }
+  p { color: var(--ink-2); max-width: 42ch; margin: 0 auto 1.5rem; }
+  a { color: var(--link); text-underline-offset: 0.18em; }
+</style>
+</head>
+<body>
+  <main>
+    <h1>Übergare.</h1>
+    <p>
+      Diese Seite gibt es nicht — oder nicht mehr. Vielleicht war der Link zu lange
+      im Kühlschrank.
+    </p>
+    <p><a href="/panetrisi/">Zurück zur Startseite</a></p>
+  </main>
+</body>
+</html>
