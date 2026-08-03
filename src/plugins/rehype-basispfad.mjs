@@ -26,7 +26,13 @@ export function rehypeBasispfad(optionen = {}) {
       if (!wert.startsWith('/') || wert.startsWith('//')) return;
       if (wert === basis || wert.startsWith(`${basis}/`)) return;
 
-      knoten.properties[feld] = `${basis}${wert}`;
+      // Anker und Abfrage abtrennen, damit der Schrägstrich davor landet
+      const [, pfad, rest = ''] = wert.match(/^([^#?]*)(.*)$/);
+      const istDatei = /\.[a-z0-9]+$/i.test(pfad);
+      const mitSchraegstrich =
+        istDatei || pfad.endsWith('/') ? pfad : `${pfad}/`;
+
+      knoten.properties[feld] = `${basis}${mitSchraegstrich}${rest}`;
     });
   };
 }
