@@ -1,6 +1,6 @@
 ---
 titel: Baguette
-reihenfolge: 10
+reihenfolge: 30
 beschreibung: Baguette mit Sauerteig, Bassinage und langer Kaltgare.
 ---
 

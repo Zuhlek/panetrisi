@@ -1,6 +1,6 @@
 ---
 titel: Sauerteig
-reihenfolge: 20
+reihenfolge: 10
 beschreibung: Was Sauerteig ist, wie du einen ansetzt und wie du ihn fütterst.
 ---
 

@@ -1,6 +1,6 @@
 ---
 titel: Grundlagen
-reihenfolge: 30
+reihenfolge: 20
 beschreibung: Autolyse, Fenstertest, Stockgare, Kaltgare — die Begriffe und der Ablauf.
 ---
 
