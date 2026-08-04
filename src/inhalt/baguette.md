@@ -25,7 +25,9 @@ Mit Sauerteig und einem kleinen Anteil Hefe, Bassinage für eine offene Krume un
 
 Statt 500 g Weizenmehl gehen auch 200 g Dinkelmehl Typ 630 und 300 g Weizenmehl Typ 550. Die Frischhefe lässt sich durch 1 g Trockenhefe ersetzen, das Wasser für die Bassinage gerne als Eiswürfel zugeben.
 
-> 💡 Die angegebene Hydration von 77 % rechnet Mehl und Wasser aus dem Sauerteig mit ein und geht von einem Sauerteig mit 100 % Wasseranteil aus.
+> 📌 Die angegebene Hydration von 77 % rechnet Mehl und Wasser aus dem Sauerteig mit ein und geht von einem Sauerteig mit 100 % Wasseranteil aus.
+
+> 🔬 Honig und Olivenöl sind keine Geschmacksdeko: Der Zucker im Honig gibt dem Treibmittel Starthilfe und färbt später die Kruste, das Öl legt sich zwischen die Glutenstränge und macht die Krume weicher und länger frisch.
 
 ## Zeitplan
 
@@ -58,13 +60,13 @@ Anschliessend Salz hinzufügen — optional auch Olivenöl und Honig beziehungsw
 
 Wenn der Fenstertest bestanden wurde, das restliche Wasser für die Bassinage beigeben und den Teig wieder auskneten. Das dauert meist ein paar Minuten.
 
-> 💡 **Bassinage.** Das hier beigegebene Wasser kann durch das Mehl nicht mehr gleich gut aufgenommen werden, weshalb es im Ofen anders verdunstet. Das führt zu einem unregelmässigeren und luftigeren Ergebnis.
+> 🔬 **Bassinage.** Das Glutennetz ist zu diesem Zeitpunkt bereits fertig ausgebildet, das späte Wasser kann durch das Mehl deshalb nicht mehr gleich gut aufgenommen werden. Es bleibt freier im Teig und verdunstet im Ofen anders, was zu einem unregelmässigeren und luftigeren Ergebnis führt. Der Preis dafür ist ein weicherer Teig, der beim Formen etwas mehr Gefühl verlangt.
 
 ### 5. Stockgare mit Dehnen & Falten
 
 Teig in eine geölte Form geben und 30 Minuten bei Raumtemperatur gären lassen. Anschliessend den Teig [dehnen und falten](/grundlagen#dehnen--falten) und weitere 30 Minuten gären lassen. Nochmals dehnen und falten und ein drittes Mal 30 Minuten gären lassen.
 
-> 💡 **Kaltgare.** Alternativ kann der Teig hier für 8–16 Stunden in den Kühlschrank gestellt werden. Nach der Kaltgare sollte er sich rund 45 Minuten an die Raumtemperatur akklimatisieren können, bevor er weiterverarbeitet wird.
+> 📌 **Kaltgare.** Alternativ kann der Teig hier für 8–16 Stunden in den Kühlschrank gestellt werden. Nach der Kaltgare sollte er sich rund 45 Minuten an die Raumtemperatur akklimatisieren können, bevor er weiterverarbeitet wird.
 
 ### 6. Stürzen und portionieren
 
@@ -78,13 +80,13 @@ Ofen auf maximale Stufe oder 230 Grad vorheizen. Umluft oder Ober- und Unterhitz
 
 Teiglinge in die finale Form bringen und weitere 30 Minuten bei Raumtemperatur gehen lassen.
 
-> 💡 **Spannung.** Am besten die vorgeformten Stücke etwas in Form klopfen. Anschliessend der Länge nach zwei- bis dreimal zur Mitte hin falten und schliesslich mit den Händen aufrollen. Schau dir dazu am besten Videos an. Ziel ist es, den Teig auf Spannung zu bringen, damit er im Ofen schön aufreisst.
+> 📌 **Spannung.** Am besten die vorgeformten Stücke etwas in Form klopfen. Anschliessend der Länge nach zwei- bis dreimal zur Mitte hin falten und schliesslich mit den Händen aufrollen. Schau dir dazu am besten Videos an. Ziel ist es, den Teig auf Spannung zu bringen, damit er im Ofen schön aufreisst.
 
 ### 9. Einschneiden und einschiessen
 
 Teiglinge einschneiden und in den Ofen schieben. Wasser auf den Ofenboden spritzen, um Dampf zu erzeugen.
 
-> 💡 **Einschneiden.** Grundsätzlich sollten die Schnitte leicht schräg zur Länge des Baguettes gemacht werden.
+> 🔬 **Einschneiden.** Der Schnitt ist eine Sollbruchstelle: Der Ofentrieb sucht sich den Weg des geringsten Widerstands, und ohne Schnitt reisst das Brot irgendwo von selbst auf, meist seitlich. Grundsätzlich sollten die Schnitte leicht schräg zur Länge des Baguettes gemacht werden, damit sich die Ränder beim Aufgehen übereinanderschieben können.
 
 ### 10. Backen
 

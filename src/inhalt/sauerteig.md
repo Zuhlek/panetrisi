@@ -10,7 +10,7 @@ Gärteig, Anstellgut, Sourdough, Lievito madre, Pasta madre, masa madre — die 
 
 ## Was ist Sauerteig?
 
-> 💡 Sauerteig ist ein Mikroorganismus von wilden Hefebakterien, die in Symbiose mit Milchsäurebakterien leben. Milchsäurebakterien bauen die Stärke im Mehl in Zucker um. Hefebakterien essen den Zucker und produzieren Kohlendioxid.
+> 🔬 Sauerteig ist eine Lebensgemeinschaft aus wilden Hefen und Milchsäurebakterien. Den Zucker liefern die Enzyme des Mehls, indem sie die Stärke zerlegen. Davon leben beide Partner: Die Hefen — Pilze, keine Bakterien — vergären den Zucker zu Kohlendioxid und Alkohol und treiben damit den Teig. Die Milchsäurebakterien machen daraus Milch- und Essigsäure und liefern Geschmack, Haltbarkeit und Verträglichkeit.
 
 Es gibt grundsätzlich zwei Parameter, welche bei der Sauerteigherstellung angepasst werden können: **Wassergehalt** und **verwendetes Mehl**. Die Unterschiede machen sich in Gärzeit, Geschmack und Haltbarkeit bemerkbar.
 
@@ -18,7 +18,7 @@ Man muss dazu sagen, dass diese Unterschiede sich erst bemerkbar machen, wenn ma
 
 ## Wassergehalt
 
-> 💦 Der Wassergehalt wird meistens im Verhältnis zum frischen Mehl angegeben (also exklusive dem bestehenden Sauerteig). Zum Beispiel 100:60 (Mehl:Wasser) oder schlicht 60 %. Gerne wird auch noch der bisherige Sauerteiganteil genannt: 100 (Sauerteig) : 100 (frisches Mehl) : 100 (Wasser).
+> 📌 Der Wassergehalt wird meistens im Verhältnis zum frischen Mehl angegeben (also exklusive dem bestehenden Sauerteig). Zum Beispiel 100:60 (Mehl:Wasser) oder schlicht 60 %. Gerne wird auch noch der bisherige Sauerteiganteil genannt: 100 (Sauerteig) : 100 (frisches Mehl) : 100 (Wasser).
 
 Dabei ist ein Wasseranteil von 50 % das untere und 100 % das obere Ende der Skala. Die Unterschiede lassen sich grob so zusammenfassen:
 
@@ -31,7 +31,7 @@ Dabei ist ein Wasseranteil von 50 % das untere und 100 % das obere Ende der Skal
 
 ## Mehlsorten
 
-> 🍩 Alle Mehlsorten können für die Fütterung von Sauerteig verwendet werden. Faustregel: Je mehr Schalenanteile, desto grösser die enzymatische Aktivität — das heisst, die Hefe- und Milchsäurebakterien arbeiten schneller.
+> 🔬 Alle Mehlsorten können für die Fütterung von Sauerteig verwendet werden. Faustregel: Je mehr Schalenanteile, desto grösser die enzymatische Aktivität — das heisst, die Hefen und Milchsäurebakterien arbeiten schneller.
 
 ## Faustregeln
 
@@ -43,16 +43,20 @@ Es gibt ganz viele verschiedene Ansätze und Empfehlungen für die Herstellung u
 
 That’s it.
 
+> 🔬 **Warum diese Regeln funktionieren.** Roggenvollkornmehl eignet sich zum Ansetzen, weil in den Schalen sitzt, was ein junger Sauerteig braucht: die meisten Enzyme, die Mineralstoffe und die wilden Mikroorganismen selbst. Und die Verdoppelung innert 2,5 Stunden misst nicht das Alter des Sauerteigs, sondern seine Triebkraft — also genau das, was er später im Brot leisten muss.
+
 ## Temperatur & Lagerung
 
 Ein Sauerteig kann nach einer Fütterung rund eine Woche ohne weitere Fütterung bei Raumtemperatur überleben. Er wird dann aber entsprechend geschwächt sein und ein paar Fütterungsrunden benötigen, bevor er wieder zu alten Kräften kommt.
 
-> 🚨 Die höchste Fermentationsaktivität erreicht der Sauerteig bei knapp 30 Grad. Je kälter, desto langsamer. Damit lässt sich das Ganze etwas steuern und auf den Alltag anpassen.
+> 🔬 Die höchste Fermentationsaktivität erreicht der Sauerteig bei knapp 30 Grad. Je kälter, desto langsamer — als Faustregel halbiert sich das Tempo mit jeweils 10 Grad weniger. Damit lässt sich das Ganze etwas steuern und auf den Alltag anpassen.
 
 Mit Kälte kann der Fermentationsprozess lediglich verlangsamt werden, nicht aber gestoppt. Das heisst: Auch wenn du deinen Sauerteig bei 18 Grad stehen lässt oder gar bei 5 Grad im Kühlschrank, er wird denselben Zyklus durchlaufen wie bei Raumtemperatur. Das ist für zwei Anwendungen nützlich:
 
 - **Langsamere Fermentation** — komplexerer Geschmack und bessere Verträglichkeit.
 - **Längere Lagerung** — im Kühlschrank überlebt der Sauerteig nach einer Fütterung bis zu vier Wochen.
+
+> 🔬 **Die Temperatur ist der Geschmacksregler.** Sie bestimmt nicht nur, wie sauer der Teig wird, sondern welche Säure entsteht: Warm geführt bildet sich vor allem Milchsäure — mild und joghurtig. Kühl geführt verschiebt sich das Verhältnis zur Essigsäure — spitzer und stechender. Wer am Geschmack schrauben will, dreht also zuerst an der Temperatur und erst danach am Wassergehalt.
 
 ## Sauerteig ansetzen
 
@@ -61,6 +65,8 @@ Wie bereits erwähnt, solltest du für den Anfang auf Roggenvollkornmehl setzen.
 ### 1. Mehl und Wasser mischen
 
 Im Verhältnis 100:100. Beginne am besten mit 40 g : 40 g und lass die Mischung 24 Stunden bei Raumtemperatur stehen.
+
+> 📌 Nimm ein gerades Glas und markiere den Füllstand nach jeder Fütterung mit einem Gummiband oder einem Filzstift. Nur so siehst du zuverlässig, ob und wann sich das Volumen verdoppelt hat — geschätzt wird das erstaunlich schlecht.
 
 ### 2. Füttern
 
@@ -80,4 +86,6 @@ Will man mit dem Sauerteig backen, dann sollte man ihn vor der Verwendung am bes
 
 ## Verhältnis Mehl Wasser
 
-Das Verhältnis kann grundsätzlich jederzeit angepasst werden, sollte dann aber beibehalten werden, sodass sich die Bakterien daran gewöhnen können. Ständige Umstellung schwächte den Sauerteig.
+Das Verhältnis kann grundsätzlich jederzeit angepasst werden, sollte dann aber beibehalten werden, sodass sich die Kulturen daran gewöhnen können. Ständige Umstellung schwächt den Sauerteig.
+
+> 🔬 Hinter dem «Gewöhnen» steckt eine echte Verschiebung: Je nach Wassergehalt, Mehl und Temperatur setzen sich andere Hefe- und Bakterienstämme durch. Nach einer Umstellung dauert es ein paar Fütterungen, bis sich das Verhältnis neu eingependelt hat — in dieser Zeit ist der Sauerteig weniger triebstark und schmeckt anders.
