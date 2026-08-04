@@ -68,12 +68,16 @@ Nimm einen Teil vom Sauerteig aus Schritt 1 (z. B. 40 g), den Rest kannst du weg
 
 ### 3. Wiederholen
 
-Wiederhole Schritt 2 so lange, bis der Sauerteig sein Volumen innert 2,5 Stunden nach der Fütterung verdoppelt. Das braucht in der Regel vier bis sechs Runden.
+Wiederhole Schritt 2 so lange, bis der Sauerteig sein Volumen innert 2-3 Stunden nach der Fütterung verdoppelt. Das braucht in der Regel vier bis sechs Runden.
 
-> 🎉 Herzliche Gratulation, du darfst deinem Sauerteig nun einen Namen geben.
+> Sobald die Verdoppelung innert 2-3 Stunden stattfindet, hast du offiziell deinen Sauerteig zum Leben erweckt und du darfst ihm nun einen Namen geben. 🎉
 
 ## Regelmässige Fütterung
 
 Will man mit dem Sauerteig backen, dann sollte man ihn vor der Verwendung am besten zweimal innert 24 Stunden aufgefrischt haben. Ansonsten kann man ihn einfach füttern und für ein paar Tage in den Kühlschrank stellen, bis man ihn wieder braucht.
 
-> 📌 Bei regelmässigen Fütterungen ohne Backabsichten lohnt es sich, die Mengen zu reduzieren, damit nicht zu viel Abfall entsteht — zum Beispiel 40 g : 40 g : 40 g.
+> 📌 Bei regelmässigen Fütterungen ohne Backabsichten lohnt es sich, die Mengen zu reduzieren, damit nicht zu viel Abfall entsteht.
+
+## Verhältnis Mehl Wasser
+
+Das Verhältnis kann grundsätzlich jederzeit angepasst werden, sollte dann aber beibehalten werden, sodass sich die Bakterien daran gewöhnen können. Ständige Umstellung schwächte den Sauerteig.
