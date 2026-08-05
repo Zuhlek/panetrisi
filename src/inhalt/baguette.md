@@ -54,7 +54,7 @@ Sauerteig und Hefe hinzugeben und den Teig für 5 Minuten auf mittlerer Stufe kn
 
 ### 3. Salz beigeben und auskneten
 
-Anschliessend Salz hinzufügen — optional auch Olivenöl und Honig beziehungsweise Ahornsirup — und weitere 10–15 Minuten kneten, oder bis der [Fenstertest](/grundlagen#fenstertest) bestanden ist.
+Anschliessend Salz hinzufügen (optional auch Olivenöl und Honig beziehungsweise Ahornsirup) und weitere 10–15 Minuten kneten, oder bis der [Fenstertest](/grundlagen#fenstertest) bestanden ist.
 
 ### 4. Bassinage
 

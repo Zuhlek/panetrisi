@@ -1,7 +1,7 @@
 ---
 titel: Panettone
 reihenfolge: 40
-beschreibung: Panettone mit Lievito madre, in zwei Teigen — primo und secondo impasto.
+beschreibung: Panettone mit Lievito madre, in zwei Teigen (primo und secondo impasto).
 ---
 
 # Panettone
@@ -10,24 +10,24 @@ Panettone-Teig besteht aus einem Vorteig (primo impasto) und einem Hauptteig (se
 
 ## Generelles
 
-- **Mehl** — Funktioniert nur mit sehr starkem Mehl, das heisst mit viel Protein. Zum Beispiel das Spezialmehl von homebaker.ch, dort gibt es auch Panettone-Spezialmehl. Alternativ ein Mehl mit tiefem Ausmahlungsgrad, Typo 00 oder 405, auch Manitobamehl ist gut. Aber im Endeffekt geht es nur mit Panettone-Spezialmehl, das heisst bei allen anderen Mehlsorten muss der Butter-, Ei- respektive Wassergehalt angepasst werden.
-- **Temperatur** — Das Wichtigste ist die Temperatur: Der Teig darf zu keinem Zeitpunkt während der Verarbeitung über 26 Grad haben. Am stärksten baut sich das Glutennetzwerk zwischen 24 und 26 Grad aus. Darüber verliert der Teig an Struktur und die Butter bricht aus, darunter dauert schlicht alles länger. Ein Thermometer ist also ein Muss.
-- **Sauerteig** — Als Sauerteig sollte man am besten einen Lievito madre verwenden, also einen Sauerteig mit 50 % Hydration. Es geht auch mit flüssigem Sauerteig, dann sollte die Menge aber auf 100 g reduziert werden, da die Gärung ansonsten zu schnell voranschreitet.
-- **Mehl im secondo impasto** — Beim secondo impasto kann man grundsätzlich auf zusätzliches Mehl verzichten. Das ist aber nur ratsam bei genügend Erfahrung und bei Verwendung von Spezialmehl, ansonsten klappt es eigentlich nie.
-- **Intervalle** — Das Einkneten von Zutaten in Intervallen erhöht die Stärke des Glutennetzwerkes. Werden Zutaten zu schnell verarbeitet, schöpft man nicht das volle Potential aus.
-- **Inhalt** — Der Inhalt des Panettones ist beliebig wählbar und kann natürlich auch komplett weggelassen werden. Sehr gut eignen sich Dörrfrüchte oder kandierte Früchte. Frische Früchte sind sehr schwierig, da sie viel Wasser enthalten und die Stabilität strapazieren. Es empfiehlt sich, frische Früchte immer noch etwas im Ofen zu dörren. Wichtig ist aber auch, dass zu trockene Früchte zu viel Wasser aus dem Teig ziehen und diesen dann trocken ausbacken lassen. Es braucht auch hier Erfahrung. Zum Beispiel können getrocknete Rosinen oder Aprikosen im Wasserbad etwas erhitzt werden, damit sie etwas Wasser aufnehmen.
-- **Probieren über Studieren** — Nicht zögern, einfach mal machen und Erfahrung sammeln.
+- **Mehl**: Funktioniert nur mit sehr starkem Mehl, das heisst mit viel Protein. Zum Beispiel das Spezialmehl von homebaker.ch, dort gibt es auch Panettone-Spezialmehl. Alternativ ein Mehl mit tiefem Ausmahlungsgrad, Typo 00 oder 405, auch Manitobamehl ist gut. Aber im Endeffekt geht es nur mit Panettone-Spezialmehl, das heisst bei allen anderen Mehlsorten muss der Butter-, Ei- respektive Wassergehalt angepasst werden.
+- **Temperatur**: Der wichtigste Punkt überhaupt. Der Teig darf zu keinem Zeitpunkt während der Verarbeitung über 26 Grad haben. Am stärksten baut sich das Glutennetzwerk zwischen 24 und 26 Grad aus. Darüber verliert der Teig an Struktur und die Butter bricht aus, darunter dauert schlicht alles länger. Ein Thermometer ist also ein Muss.
+- **Sauerteig**: Als Sauerteig sollte man am besten einen Lievito madre verwenden, also einen Sauerteig mit 50 % Hydration. Es geht auch mit flüssigem Sauerteig, dann sollte die Menge aber auf 100 g reduziert werden, da die Gärung ansonsten zu schnell voranschreitet.
+- **Mehl im secondo impasto**: Beim secondo impasto kann man grundsätzlich auf zusätzliches Mehl verzichten. Das ist aber nur ratsam bei genügend Erfahrung und bei Verwendung von Spezialmehl, ansonsten klappt es eigentlich nie.
+- **Intervalle**: Das Einkneten von Zutaten in Intervallen erhöht die Stärke des Glutennetzwerkes. Werden Zutaten zu schnell verarbeitet, schöpft man nicht das volle Potential aus.
+- **Inhalt**: Der Inhalt des Panettones ist beliebig wählbar und kann natürlich auch komplett weggelassen werden. Sehr gut eignen sich Dörrfrüchte oder kandierte Früchte. Frische Früchte sind sehr schwierig, da sie viel Wasser enthalten und die Stabilität strapazieren. Es empfiehlt sich, frische Früchte immer noch etwas im Ofen zu dörren. Wichtig ist aber auch, dass zu trockene Früchte zu viel Wasser aus dem Teig ziehen und diesen dann trocken ausbacken lassen. Es braucht auch hier Erfahrung. Zum Beispiel können getrocknete Rosinen oder Aprikosen im Wasserbad etwas erhitzt werden, damit sie etwas Wasser aufnehmen.
+- **Probieren über Studieren**: Nicht zögern, einfach mal machen und Erfahrung sammeln.
 
 ## Hintergrund
 
 Panettone ist kein schwieriges Rezept, sondern ein Teig, der gleich von mehreren Seiten unter Druck steht. Wer weiss, woher der Druck kommt, kann im richtigen Moment reagieren.
 
-- **Fett und Wärme** — Butterfett beginnt weit unter 30 Grad zu schmelzen. Wird der Teig zu warm, bricht die Emulsion: Das Fett tritt aus, der Teig glänzt speckig und findet nicht mehr zusammen. Das ist der eigentliche Grund für die 26-Grad-Grenze — beim [Baguette](/baguette) sind 28 Grad kein Problem, hier schon.
-- **Fett und Gluten** — Fett legt sich wie ein Film um die Glutenstränge und verhindert, dass sie neue Verbindungen eingehen. Deshalb kommen Butter und Eier in Intervallen in den Teig: Nach jeder Portion muss sich das Netz erst wieder finden, bevor es die nächste verkraftet.
-- **Säure** — Säure baut Gluten ab. Über eine Führung von 12–18 Stunden plus zweitem Teig macht das den Unterschied zwischen einem Panettone, der steht, und einem, der zusammenfällt. Der milde, feste Lievito madre hält den pH-Wert oben — er ist hier also keine Geschmacksfrage, sondern Statik.
-- **Zucker** — Zucker zieht Wasser an sich und setzt die Hefen unter osmotischen Druck. Sie arbeiten dadurch langsamer und brauchen mehr Kraft. Das erklärt, warum es einen austrainierten Sauerteig braucht und warum alles so lange dauert.
-- **Mehl** — Das Glutennetz muss die ganze Gärung tragen und dabei die doppelte Ladung an Fett, Zucker und Ei halten. Spezialmehle werden dafür mit dem W-Wert ausgezeichnet, der die Backstärke angibt; für Panettone sucht man W 350–400.
-- **Früchte** — Wasser wandert immer dorthin, wo mehr Zucker sitzt. Trockene Früchte saugen es also aus dem Teig, eingeweichte oder kandierte geben eher etwas ab. Genau darum der Zwischenschritt mit dem Wasserbad.
+- **Fett und Wärme**: Butterfett beginnt weit unter 30 Grad zu schmelzen. Wird der Teig zu warm, bricht die Emulsion: Das Fett tritt aus, der Teig glänzt speckig und findet nicht mehr zusammen. Das ist der eigentliche Grund für die 26-Grad-Grenze. Beim [Baguette](/baguette) sind 28 Grad kein Problem, hier schon.
+- **Fett und Gluten**: Fett legt sich wie ein Film um die Glutenstränge und verhindert, dass sie neue Verbindungen eingehen. Deshalb kommen Butter und Eier in Intervallen in den Teig: Nach jeder Portion muss sich das Netz erst wieder finden, bevor es die nächste verkraftet.
+- **Säure**: Säure baut Gluten ab. Über eine Führung von 12–18 Stunden plus zweitem Teig macht das den Unterschied zwischen einem Panettone, der steht, und einem, der zusammenfällt. Der milde, feste Lievito madre hält den pH-Wert oben. Er ist hier also keine Geschmacksfrage, sondern Statik.
+- **Zucker**: Zucker zieht Wasser an sich und setzt die Hefen unter osmotischen Druck. Sie arbeiten dadurch langsamer und brauchen mehr Kraft. Das erklärt, warum es einen austrainierten Sauerteig braucht und warum alles so lange dauert.
+- **Mehl**: Das Glutennetz muss die ganze Gärung tragen und dabei die doppelte Ladung an Fett, Zucker und Ei halten. Spezialmehle werden dafür mit dem W-Wert ausgezeichnet, der die Backstärke angibt; für Panettone sucht man W 350–400.
+- **Früchte**: Wasser wandert immer dorthin, wo mehr Zucker sitzt. Trockene Früchte saugen es also aus dem Teig, eingeweichte oder kandierte geben eher etwas ab. Genau darum der Zwischenschritt mit dem Wasserbad.
 
 ## Zutaten
 
@@ -85,6 +85,6 @@ Panettone ist kein schwieriges Rezept, sondern ein Teig, der gleich von mehreren
 7. Teig auskneten, bis sich alles vom Kübelrand löst.
 8. Inhalt in 3 Minuten einkneten. Alternativ und schonender ist es, diesen von Hand einzukneten: dazu den Teig auf einer gebutterten Arbeitsfläche grossflächig ausziehen, die Zutaten darauf verteilen und den Teig zusammenfalten. Alles zu einer Kugel formen.
 
-> 🔬 Dass der Teig zwischendurch «bricht», ist normal: Mit jeder Portion Fett und Ei wird das Glutennetz unterbrochen und die Emulsion muss sich neu bilden. Das lange Kneten baut beides wieder auf — solange die Temperatur stimmt. Wird der Teig dagegen speckig-glänzend und fettet an der Schüssel, ist er zu warm geworden und das Fett ist ausgetreten.
+> 🔬 Dass der Teig zwischendurch «bricht», ist normal: Mit jeder Portion Fett und Ei wird das Glutennetz unterbrochen und die Emulsion muss sich neu bilden. Das lange Kneten baut beides wieder auf, solange die Temperatur stimmt. Wird der Teig dagegen speckig-glänzend und fettet an der Schüssel, ist er zu warm geworden und das Fett ist ausgetreten.
 
 > 🚨 Ist der Teig zu warm, kann er während der Verarbeitung grundsätzlich jederzeit in den Kühlschrank gestellt werden. Bestenfalls sollte er aber vor der Verarbeitung gekühlt werden.

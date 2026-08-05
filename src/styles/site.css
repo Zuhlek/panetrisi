@@ -1,8 +1,8 @@
 /* ==========================================================================
-   panetrisi — das ganze Stylesheet
+   panetrisi, das ganze Stylesheet
    ==========================================================================
    Die Seite ist ein Markdown-Betrachter: links der Dateibaum, rechts der
-   gerenderte Text. Entsprechend gibt es nur zwei Sorten Regeln — das Gerüst
+   gerenderte Text. Entsprechend gibt es nur zwei Sorten Regeln: das Gerüst
    und die Auszeichnung von Fliesstext.
 
      1. Farb-Tokens (hell / dunkel)
@@ -320,7 +320,7 @@ main {
 .fliesstext ul:not([class]) > li::marker,
 .fliesstext ol:not([class]) > li::marker { color: var(--akzent); }
 
-/* Blockquotes — tragen die Hinweiskästen, mit einem Emoji als Marke */
+/* Blockquotes, tragen die Hinweiskästen, mit einem Emoji als Marke */
 .fliesstext blockquote {
   margin: 2rem 0;
   padding: 1rem 1.35rem;
@@ -335,7 +335,7 @@ main {
 .fliesstext blockquote ul,
 .fliesstext blockquote ol { margin-bottom: 0.75em; }
 
-/* Tabellen — der rollbare Rahmen kommt von rehype-huellen */
+/* Tabellen, der rollbare Rahmen kommt von rehype-huellen */
 .tabelle-rollen { overflow-x: auto; margin: 2rem 0; }
 
 .fliesstext table {
@@ -373,7 +373,7 @@ main {
   white-space: nowrap;
 }
 
-/* Bilder — <figure> kommt von rehype-huellen */
+/* Bilder, <figure> kommt von rehype-huellen */
 .fliesstext figure { margin: 2.5rem 0; }
 .fliesstext figure img { border-radius: var(--radius); }
 .fliesstext figcaption {

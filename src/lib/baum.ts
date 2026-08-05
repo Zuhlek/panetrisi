@@ -4,7 +4,7 @@ import { pfad } from './pfad';
 export interface Knoten {
   /** Beschriftung im Dateibaum. */
   titel: string;
-  /** Adresse — fehlt bei Ordnern. */
+  /** Adresse, fehlt bei Ordnern. */
   ziel?: string;
   /** Sammlungs-ID der Seite, für die Hervorhebung der aktuellen Seite. */
   id?: string;
@@ -30,7 +30,7 @@ function sortiere(knoten: Knoten[]): Knoten[] {
 
 /**
  * Baut aus den Dateipfaden den Navigationsbaum. Ordner entstehen von selbst,
- * sobald eine Datei darin liegt — es gibt keine Liste, die nachgeführt wird.
+ * sobald eine Datei darin liegt, es gibt keine Liste, die nachgeführt wird.
  */
 export async function dateibaum(): Promise<Knoten[]> {
   const eintraege = await getCollection('seiten');

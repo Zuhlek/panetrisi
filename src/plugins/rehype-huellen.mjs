@@ -9,7 +9,7 @@
  * 2. Tabellen bekommen einen Rahmen, in dem sie auf schmalen Bildschirmen
  *    seitlich rollen können, ohne dass die ganze Seite wandert.
  *
- * Beide Male bleibt der ursprüngliche Knoten unangetastet — er wird nur umhüllt,
+ * Beide Male bleibt der ursprüngliche Knoten unangetastet, er wird nur umhüllt,
  * damit Astros Bildverarbeitung das <img> weiterhin findet.
  */
 import { visit } from 'unist-util-visit';
