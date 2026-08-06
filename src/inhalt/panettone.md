@@ -77,3 +77,21 @@ Panettone-Teig besteht aus einem Vorteig (primo impasto) und einem Hauptteig (se
 > 🔬 Dass der Teig zwischendurch «bricht», ist normal: Mit jeder Portion Fett und Ei wird das Glutennetz unterbrochen und die Emulsion muss sich neu bilden. Das lange Kneten baut beides wieder auf, solange die Temperatur stimmt. Wird der Teig dagegen speckig-glänzend und fettet an der Schüssel, ist er zu warm geworden und das Fett ist ausgetreten.
 
 > 🚨 Ist der Teig zu warm, kann er während der Verarbeitung grundsätzlich jederzeit in den Kühlschrank gestellt werden. Bestenfalls sollte er aber vor der Verarbeitung gekühlt werden.
+
+### Formen & Backen
+
+> 📌 Die Papierformen gibt es zum Beispiel bei homebaker.ch, empfehlenswert ist die Grösse für 750 g Teig. Dazu braucht es eine Umhängevorrichtung zum Auskühlen: Metallstäbe kann man kaufen, es tun aber auch zwei Kleiderbügel. Dazu den Bügel mit der Zange an einem Ende der langen Seite durchtrennen und das abgetrennte Ende zu einem Haken formen, der den langen Teil später hält.
+
+1. Sobald der Inhalt im Teig ist, den ganzen Teig zu einer Kugel vorformen und 20 Minuten ruhen lassen.
+2. Teig in gleich grosse Stücke teilen. Ideal sind 750 g pro Form, 650 g sind aber auch kein Problem. Mehr als 850 g sollten es nicht sein, sonst kann der Teig überlaufen.
+3. Die Teiglinge nacheinander rund formen. Dabei immer über den Tisch ziehen, so wird der Teig straff gezogen, und darauf achten, dass immer derselbe Teil des Teiges oben ist. Zum Schluss die Kugel auf der Stelle vorsichtig um die eigene Achse drehen, das zieht sie nochmals zusammen.
+4. Fühlt sich der Teig sehr weich an, den Vorgang nach 20 Minuten wiederholen.
+5. Teiglinge direkt nach dem Formen in die Formen setzen.
+6. In den Formen gären lassen, am besten im Backofen oder mit Plastikfolie überzogen, damit sie nicht austrocknen. Das dauert 6–12 Stunden, harte Vorgaben gibt es keine. Bereit für den Ofen ist der Teig, wenn er sich mindestens auf das 2,5-Fache vergrössert hat.
+7. Ofen auf 170 Grad Ober- und Unterhitze vorheizen. Steht nur Ober- oder nur Unterhitze zur Verfügung, lieber Umluft bei 165 Grad. Die Panettoni währenddessen an die Luft stellen, die Haut trocknet dabei etwas ab, was das Einschneiden erleichtert.
+8. Kurz vor dem Backen ein Kreuz einschneiden, 3–5 mm tief, einen kleinen Butterwürfel in die Mitte legen und einschiessen.
+9. Backen, bis die Kerntemperatur 94 Grad erreicht ist. Die Backdauer ist enorm unterschiedlich, ohne Thermometer ist es zu riskant.
+10. Panettone aus dem Ofen nehmen und die vorbereiteten Kleiderbügel unten durchführen: mittig, zwei Stück parallel nebeneinander. Langes Ende einhaken und den Panettone umdrehen.
+11. Mindestens 3 Stunden kopfüber auskühlen lassen und dann sofort in Plastikfolie verpacken. Bei den Formen von homebaker.ch liegt meistens eine bei.
+
+> 🔬 Direkt aus dem Ofen ist der Panettone natürlich schon bereit zum Verzehr, und warm ist er absolut genial. Der typische Panettone-Geschmack kommt aber erst nach 2–3 Tagen Reifung in der Folie, dann hat sich auch die Feuchtigkeit gleichmässig verteilt.
