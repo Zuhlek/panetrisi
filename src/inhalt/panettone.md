@@ -22,28 +22,28 @@ Panettone-Teig besteht aus einem Vorteig (primo impasto) und einem Hauptteig (se
 
 ### Primo impasto
 
-| Zutat | Menge |
-| --- | ---: |
-| Mehl | 500 g |
-| Sauerteig | 160 g |
-| Wasser | 200–240 g |
-| Zucker | 140–170 g |
-| Butter | 140–170 g |
-| Eier | 3–4 |
+| Zutat | Anfänger | Profi |
+| --- | ---: | ---: |
+| Mehl | 500 g | 500 g |
+| Sauerteig | 160 g | 160 g |
+| Wasser | 200 g | 240 g |
+| Zucker | 140 g | 170 g |
+| Butter | 140 g | 170 g |
+| Eier | 3 | 4 |
 
 ### Secondo impasto
 
-| Zutat | Menge |
-| --- | ---: |
-| Mehl | 0–150 g |
-| Salz | 8 g |
-| Honig | 35 g |
-| Vanillezucker | 1 Päckchen |
-| Vanilleschote | 1 |
-| Zucker | 100–120 g |
-| Butter | 140–170 g |
-| Eier | 5–6 |
-| Inhalt | 300–500 g |
+| Zutat | Anfänger | Profi |
+| --- | ---: | ---: |
+| Mehl | 150 g | 0 g |
+| Salz | 8 g | 8 g |
+| Honig | 35 g | 35 g |
+| Vanillezucker | 1 Päckchen | 1 Päckchen |
+| Vanilleschote | 1 | 1 |
+| Zucker | 100 g | 120 g |
+| Butter | 140 g | 170 g |
+| Eier | 5 | 6 |
+| Inhalt | 300 g | 500 g |
 
 ## Vorgehen
 
